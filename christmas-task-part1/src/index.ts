@@ -1,3 +1,4 @@
+import 'nouislider/dist/nouislider.css';
 import './styles/style.scss';
-
-console.log('Hello world');
+import './app/utils/count-slider';
+import './app/utils/year-slider';
