@@ -1,0 +1,78 @@
+.sort {
+  width: 480px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.sort__title {
+  height: 60px;
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 60px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sort__select {
+  width: 380px;
+  height: 40px;
+  margin: 10px 0;
+  margin-bottom: 125px;
+  padding: 5px 25px;
+
+  font: inherit;
+  font-size: 20px;
+  line-height: 28px;
+  color: #fff;
+
+  appearance: none;
+
+  outline: none;
+  border: 1px solid $main-color;
+  border-radius: 20px;
+  background-color: rgba(31, 112, 127, 0.3);
+  background-image: url('../assets/svg/arrow-down.svg');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 340px center;
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+
+  &:focus {
+    border-color: #cccccc;
+  }
+
+  option {
+    color: inherit;
+    background-color: #183e42;
+  }
+}
+
+.sort__reset-btn {
+  width: 250px;
+  height: 40px;
+  margin: 10px 0;
+
+  font-family: $font-family-primary;
+  font-size: 20px;
+  font-weight: 400;
+  color: $main-text;
+
+  border-radius: 20px;
+  border: 1px solid $main-color;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+
+  &:hover,
+  &:focus {
+    border-color: #cccccc;
+  }
+}

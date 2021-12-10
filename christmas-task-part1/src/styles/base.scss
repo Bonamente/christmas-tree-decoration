@@ -1,0 +1,72 @@
+@font-face {
+  font-family: Neucha;
+  src: url(../assets/fonts/Neucha-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Steppe;
+  src: url(../assets/fonts/Steppe.ttf);
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+// Temporary
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-width: 0;
+
+  clip: rect(0, 0, 0, 0);
+}
+
+.main {
+  min-width: 100%;
+  min-height: calc(100vh - 140px);
+
+  background-image: url('../assets/img/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 140px);
+
+  background: rgba(22, 41, 41, 0.5);
+  backdrop-filter: blur(3px);
+}

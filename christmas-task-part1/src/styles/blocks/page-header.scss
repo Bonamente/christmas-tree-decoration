@@ -1,0 +1,135 @@
+.header {
+  position: relative;
+  z-index: 10;
+
+  background-color: #121c1e;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: $desktop-width;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header__logo {
+  width: 48px;
+  height: 60px;
+
+  background-image: url('../assets/svg/tree.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    filter: invert(57%) sepia(100%) saturate(329%) hue-rotate(141deg) brightness(89%) contrast(90%);
+  }
+}
+
+// .header__logo:hover {
+//   filter: invert(57%) sepia(100%) saturate(329%) hue-rotate(141deg) brightness(89%) contrast(90%);
+// }
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link {
+  position: relative;
+
+  display: block;
+  margin-right: 30px;
+  padding: 20px;
+
+  font-size: 20px;
+  color: $main-text;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  outline: none;
+
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+
+  &:nth-child(3) {
+    margin-right: 0;
+  }
+}
+
+// .active-link::after {
+//   content: '';
+//   position: absolute;
+//   bottom: 15px;
+//   left: 15px;
+//   right: 15px;
+//   height: 3px;
+//   background-color: #278d9f;
+// }
+
+.header__controls {
+  display: flex;
+  align-items: center;
+}
+
+.header__search {
+  width: 380px;
+  height: 40px;
+  padding: 5px 25px;
+  margin: 10px 0;
+  margin-right: 30px;
+
+  font-size: $font-size-base;
+  color: $main-text;
+
+  background-color: rgba(31, 112, 127, 0.3);
+  background-image: url('../assets/svg/search.svg');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 330px center;
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  border: 1px solid #278d9f;
+
+  outline: 0;
+}
+
+.header__counter {
+  width: 48px;
+  height: 60px;
+
+  background-image: url('../assets/svg/ball-2.svg');
+  background-size: 48px 60px;
+  background-position: left -8px;
+  background-repeat: no-repeat;
+
+  transition: 0.3s;
+}
+
+.toy-counter {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 4px;
+
+  font-size: 20px;
+  line-height: 45px;
+  text-align: center;
+
+  background-color: $main-color;
+  border-radius: 50%;
+}
