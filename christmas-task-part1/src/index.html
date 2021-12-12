@@ -24,144 +24,151 @@
 
   <main class="main">    
     <div class="overlay">
-      <h1 class="sr-only">Выберите ёлочные игрушки</h1>
+      <div class="page-container">
+        <h1 class="sr-only">Выберите ёлочные игрушки</h1>
 
-      <section class="controls">                
-        <section class="filters">
-          <h2 class="filters__title">Фильтры по значению</h2>
-
-          <form class="filters__form form">
-            <fieldset class="form__shape shape-form">
-              <div class="form__inner-wrapper">
-                <legend class="shape-form__title">Форма:</legend>
-                <ul class="shape-form__list">
-                  <li class="shape-form__item">
-                    <input class="shape-form__input sr-only" id="ball" type="checkbox" name="shape-ball">
-                    <label class="shape-form__label shape-form__label--ball" for="ball"><span class="sr-only">Шар</span></label>
-                  </li>
-
-                  <li class="shape-form__item">
-                    <input class="shape-form__input sr-only" id="bell" type="checkbox" name="shape-bell">
-                    <label class="shape-form__label shape-form__label--bell" for="bell"><span class="sr-only">Колокольчик</span></label>
-                  </li>
-
-                  <li class="shape-form__item">
-                    <input class="shape-form__input sr-only" id="cone" type="checkbox" name="shape-cone">
-                    <label class="shape-form__label shape-form__label--cone" for="cone"><span class="sr-only">Шишка</span></label>
-                  </li>   
-
-                  <li class="shape-form__item">
-                    <input class="shape-form__input sr-only" id="snowflake" type="checkbox" name="shape-snowflake">
-                    <label class="shape-form__label shape-form__label--snowflake" for="snowflake"><span class="sr-only">Снежинка</span></label>
-                  </li>
-
-                  <li class="shape-form__item">
-                    <input class="shape-form__input sr-only" id="figurine" type="checkbox" name="shape-figurine">
-                    <label class="shape-form__label shape-form__label--figurine"  for="figurine"><span class="sr-only">Фигурка</span></label>
-                  </li>
-                </ul>
-              </div>            
-            </fieldset>
-
-            <fieldset class="form__color color-form">
-              <div class="form__inner-wrapper">
-                <legend class="color-form__title">Цвет:</legend>
-                <ul class="color-form__list">
-                  <li class="color-form__item">
-                    <input class="color-form__input sr-only" id="white" type="checkbox" name="color-white">
-                    <label class="color-form__label color-form__label--white" for="white"><span class="sr-only">Белый</span></label>
-                  </li>
-
-                  <li class="color-form__item">
-                    <input class="color-form__input sr-only" id="yellow" type="checkbox" name="color-yellow">
-                    <label class="color-form__label color-form__label--yellow" for="yellow"><span class="sr-only">Жёлтый</span></label>
-                  </li>
-
-                  <li class="color-form__item">
-                    <input class="color-form__input sr-only" id="red" type="checkbox" name="color-red">
-                    <label class="color-form__label color-form__label--red" for="red"><span class="sr-only">Красный</span></label>
-                  </li>
-
-                  <li class="color-form__item">
-                    <input class="color-form__input sr-only" id="blue" type="checkbox" name="color-blue">
-                    <label class="color-form__label color-form__label--blue" for="blue"><span class="sr-only">Синий</span></label>
-                  </li>
-
-                  <li class="color-form__item">
-                    <input class="color-form__input sr-only" id="green" type="checkbox" name="color-green">
-                    <label class="color-form__label color-form__label--green" for="green"><span class="sr-only">Зелёный</span> </label>
-                  </li>     
-                </ul>
-              </div>
-            </fieldset>
-
-            <fieldset class="form__size size-form">
-              <div class="form__inner-wrapper">
-                <legend class="size-form__title">Размер:</legend>
-                <ul class="size-form__list">
-                  <li class="size-form__item">
-                    <input class="size-form__input sr-only" id="large" type="checkbox" name="size-large">
-                    <label class="size-form__label size-form__label--large" for="large"><span class="sr-only">Большой</span></label>
-                  </li>
-
-                  <li class="size-form__item">
-                    <input class="size-form__input sr-only" id="medium" type="checkbox" name="size-medium">
-                    <label class="size-form__label size-form__label--medium" for="medium"><span class="sr-only">Средний</span></label>
-                  </li>
-                  
-                  <li class="size-form__item">
-                    <input class="size-form__input sr-only" id="small" type="checkbox" name="size-small">
-                    <label class="size-form__label size-form__label--small" for="small"><span class="sr-only">Малый</span></label>
-                  </li>  
-                </ul>
-              </div>
-            </fieldset>
-
-            <fieldset class="form__favorite fav-form">
-              <div class="form__inner-wrapper">
-                <legend class="fav-form__title">Только любимые:</legend>
-                <input class="fav-form__input sr-only" id="only-favorite" type="checkbox" name="favorite">
-                <label class="fav-form__label" for="only-favorite" class="favorite-input-label"><span class="sr-only">Выбрать только любимые игрушки</span></label>                
-              </div>              
-            </fieldset>
-          </form>
-        </section>
-
-        <section class="range">
-          <h2 class="range__title">Фильтры по диапазону</h2>
-
-          <section class="range__count count">
-            <h3 class="count__title">Количество экземпляров:</h3> 
-            <div class="count__slider-container">             
-              <output class="count__output count__output--min">1</output>
-              <div class="count__slider"></div>
-              <output class="count__output count__output--max">12</output>
-            </div>          
+        <section class="controls">                
+          <section class="filters">
+            <h2 class="filters__title">Фильтры по значению</h2>
+  
+            <form class="filters__form form">
+              <fieldset class="form__shape shape-form">
+                <div class="form__inner-wrapper">
+                  <legend class="shape-form__title">Форма:</legend>
+                  <ul class="shape-form__list">
+                    <li class="shape-form__item">
+                      <input class="shape-form__input sr-only" id="ball" type="checkbox" name="shape-ball">
+                      <label class="shape-form__label shape-form__label--ball" for="ball"><span class="sr-only">Шар</span></label>
+                    </li>
+  
+                    <li class="shape-form__item">
+                      <input class="shape-form__input sr-only" id="bell" type="checkbox" name="shape-bell">
+                      <label class="shape-form__label shape-form__label--bell" for="bell"><span class="sr-only">Колокольчик</span></label>
+                    </li>
+  
+                    <li class="shape-form__item">
+                      <input class="shape-form__input sr-only" id="cone" type="checkbox" name="shape-cone">
+                      <label class="shape-form__label shape-form__label--cone" for="cone"><span class="sr-only">Шишка</span></label>
+                    </li>   
+  
+                    <li class="shape-form__item">
+                      <input class="shape-form__input sr-only" id="snowflake" type="checkbox" name="shape-snowflake">
+                      <label class="shape-form__label shape-form__label--snowflake" for="snowflake"><span class="sr-only">Снежинка</span></label>
+                    </li>
+  
+                    <li class="shape-form__item">
+                      <input class="shape-form__input sr-only" id="figurine" type="checkbox" name="shape-figurine">
+                      <label class="shape-form__label shape-form__label--figurine"  for="figurine"><span class="sr-only">Фигурка</span></label>
+                    </li>
+                  </ul>
+                </div>            
+              </fieldset>
+  
+              <fieldset class="form__color color-form">
+                <div class="form__inner-wrapper">
+                  <legend class="color-form__title">Цвет:</legend>
+                  <ul class="color-form__list">
+                    <li class="color-form__item">
+                      <input class="color-form__input sr-only" id="white" type="checkbox" name="color-white">
+                      <label class="color-form__label color-form__label--white" for="white"><span class="sr-only">Белый</span></label>
+                    </li>
+  
+                    <li class="color-form__item">
+                      <input class="color-form__input sr-only" id="yellow" type="checkbox" name="color-yellow">
+                      <label class="color-form__label color-form__label--yellow" for="yellow"><span class="sr-only">Жёлтый</span></label>
+                    </li>
+  
+                    <li class="color-form__item">
+                      <input class="color-form__input sr-only" id="red" type="checkbox" name="color-red">
+                      <label class="color-form__label color-form__label--red" for="red"><span class="sr-only">Красный</span></label>
+                    </li>
+  
+                    <li class="color-form__item">
+                      <input class="color-form__input sr-only" id="blue" type="checkbox" name="color-blue">
+                      <label class="color-form__label color-form__label--blue" for="blue"><span class="sr-only">Синий</span></label>
+                    </li>
+  
+                    <li class="color-form__item">
+                      <input class="color-form__input sr-only" id="green" type="checkbox" name="color-green">
+                      <label class="color-form__label color-form__label--green" for="green"><span class="sr-only">Зелёный</span> </label>
+                    </li>     
+                  </ul>
+                </div>
+              </fieldset>
+  
+              <fieldset class="form__size size-form">
+                <div class="form__inner-wrapper">
+                  <legend class="size-form__title">Размер:</legend>
+                  <ul class="size-form__list">
+                    <li class="size-form__item">
+                      <input class="size-form__input sr-only" id="large" type="checkbox" name="size-large">
+                      <label class="size-form__label size-form__label--large" for="large"><span class="sr-only">Большой</span></label>
+                    </li>
+  
+                    <li class="size-form__item">
+                      <input class="size-form__input sr-only" id="medium" type="checkbox" name="size-medium">
+                      <label class="size-form__label size-form__label--medium" for="medium"><span class="sr-only">Средний</span></label>
+                    </li>
+                    
+                    <li class="size-form__item">
+                      <input class="size-form__input sr-only" id="small" type="checkbox" name="size-small">
+                      <label class="size-form__label size-form__label--small" for="small"><span class="sr-only">Малый</span></label>
+                    </li>  
+                  </ul>
+                </div>
+              </fieldset>
+  
+              <fieldset class="form__favorite fav-form">
+                <div class="form__inner-wrapper">
+                  <legend class="fav-form__title">Только любимые:</legend>
+                  <input class="fav-form__input sr-only" id="only-favorite" type="checkbox" name="favorite">
+                  <label class="fav-form__label" for="only-favorite" class="favorite-input-label"><span class="sr-only">Выбрать только любимые игрушки</span></label>                
+                </div>              
+              </fieldset>
+            </form>
           </section>
-
-          <section class="range__year year">
-            <h3 class="year__title">Год приобретения:</h3> 
-            <div class="year__slider-container">
-              <output class="year__output year__output--min">1940</output>
-              <div class="year__slider"></div>
-              <output class="year__output year__output--max">2020</output>
-            </div>          
-          </section>          
+  
+          <section class="range">
+            <h2 class="range__title">Фильтры по диапазону</h2>
+  
+            <section class="range__count count">
+              <h3 class="count__title">Количество экземпляров:</h3> 
+              <div class="count__slider-container">             
+                <output class="count__output count__output--min">1</output>
+                <div class="count__slider"></div>
+                <output class="count__output count__output--max">12</output>
+              </div>          
+            </section>
+  
+            <section class="range__year year">
+              <h3 class="year__title">Год приобретения:</h3> 
+              <div class="year__slider-container">
+                <output class="year__output year__output--min">1940</output>
+                <div class="year__slider"></div>
+                <output class="year__output year__output--max">2020</output>
+              </div>          
+            </section>          
+          </section>
+  
+          <section class="sort">
+            <h2 class="sort__title">Сортировка</h2>
+            <select class="sort__select">
+              <option selected value="sort-name-max">По названию от «А» до «Я»</option>
+              <option value="sort-name-min">По названию от «Я» до «А»</option>
+              <option value="sort-year-max">По году приобретения (от новых к старым)</option>
+              <option value="sort-year-min">По году приобретения (от старых к новым)</option>
+            </select>
+  
+            <div class="sort__buttons reset">
+              <button class="reset__filters-btn" type="button">Сброс фильтров</button>
+              <button class="reset__settings-btn" type="button">Сброс настроек</button>
+            </div>
+  
+          </section>
         </section>
-
-        <section class="sort">
-          <h2 class="sort__title">Сортировка</h2>
-          <select class="sort__select">
-            <option selected value="sort-name-max">По названию от «А» до «Я»</option>
-            <option value="sort-name-min">По названию от «Я» до «А»</option>
-            <option value="sort-count-max">По количеству по возрастанию</option>
-            <option value="sort-count-min">По количеству по убыванию</option>
-          </select>
-          <button class="sort__reset-btn reset-btn">Сброс фильтров</button>
-        </section>
-      </section>
-
-      <div class="card-container"></div>
+  
+        <div class="card-container"></div>
+      </div>      
     </div>
   </main>
 

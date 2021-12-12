@@ -1,0 +1,54 @@
+.reset {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset__filters-btn {
+  width: 200px;
+  height: 40px;
+  margin: 10px 0;
+
+  font-family: $font-family-primary;
+  font-size: 20px;
+  font-weight: 400;
+  color: $main-text;
+
+  border-radius: 20px;
+  border: 1px solid $main-color;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+
+  &:hover,
+  &:focus {
+    border-color: #cccccc;
+  }
+}
+
+.reset__settings-btn {
+  width: 200px;
+  height: 40px;
+  margin: 10px 0;
+
+  font-family: $font-family-primary;
+  font-size: 20px;
+  font-weight: 400;
+  color: $main-text;
+
+  border-radius: 20px;
+  border: 1px solid $main-color;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+
+  &:hover,
+  &:focus {
+    border-color: #cccccc;
+  }
+}
