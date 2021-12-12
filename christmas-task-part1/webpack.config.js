@@ -65,6 +65,10 @@ module.exports = ({ development }) => ({
           to: 'assets',
           noErrorOnMissing: true,
         },
+        {
+          from: path.resolve('src/assets/img/toys'),
+          to: path.resolve('dist/toys'),
+        },
       ],
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
