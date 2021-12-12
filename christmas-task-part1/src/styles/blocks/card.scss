@@ -1,0 +1,94 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 294px;
+  height: 280px;
+  padding: 0;
+  padding-left: 10px;
+
+  border-radius: 10px;
+  border: 1px solid $main-color;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+  outline: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0px 2px 20px -2px rgba(235, 213, 213, 0.8);
+  }
+}
+
+.card__title {
+  width: 100%;
+  padding-left: 10px;
+
+  font-size: 20px;
+  font-stretch: condensed;
+}
+
+.card__img {
+  width: 90px;
+  height: 112px;
+
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.card__description {
+  width: 175px;
+  margin-top: -20px;
+  padding-left: 10px;
+
+  line-height: 1;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.card__description p span {
+  padding-left: 7px;
+}
+
+.card__ribbon {
+  position: absolute;
+  top: 210px;
+
+  width: 80px;
+  height: 40px;
+
+  background: #24c5db;
+  left: -8px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+  }
+
+  &::before {
+    border-bottom: 8px solid #14455b;
+    border-left: 8px solid transparent;
+    top: -8px;
+  }
+
+  &::after {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 15px solid #24c5db;
+    right: -15px;
+  }
+}
+
+.card.active .card__ribbon {
+  background: #cbb77a;
+}
+
+.card.active .card__ribbon:after {
+  border-left: 15px solid #cbb77a;
+}
