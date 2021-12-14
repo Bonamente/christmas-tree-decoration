@@ -153,10 +153,10 @@
           <section class="sort">
             <h2 class="sort__title">Сортировка</h2>
             <select class="sort__select">
-              <option selected value="sort-name-max">По названию от «А» до «Я»</option>
-              <option value="sort-name-min">По названию от «Я» до «А»</option>
-              <option value="sort-year-max">По году приобретения (от новых к старым)</option>
-              <option value="sort-year-min">По году приобретения (от старых к новым)</option>
+              <option selected value="name-ascending">По названию от «А» до «Я»</option>
+              <option value="name-descending">По названию от «Я» до «А»</option>
+              <option value="year-ascending">По году приобретения (от новых к старым)</option>
+              <option value="year-descending">По году приобретения (от старых к новым)</option>
             </select>
   
             <div class="sort__buttons reset">
@@ -170,7 +170,7 @@
         <section class="cards">
           <h2 class="cards__title sr-only">Карточки игрушек</h2>
           <ul class="cards__list">
-            <li class="cards__item card" tabindex="0">  
+            <li class="cards__item card" tabindex="0" data-num="1">  
               <h3 class="card__title">Большой шар с рисунком</h3>
               <img class="card__img" src="./toys/1.png" alt="toy">
               <div class="card__description">      
