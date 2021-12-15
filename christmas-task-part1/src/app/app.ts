@@ -3,6 +3,10 @@ import { IToy, Data, data } from './data';
 export interface IState {
   searchInput: string;
 
+  uiState: {
+    searchedToys: IToy[] | [];
+  };
+
   valueFilter: {
     shape: {
       ball: boolean;
@@ -47,7 +51,7 @@ export interface IState {
   settingsReset: boolean;
 
   toys: Data;
-  filteredToys: IToy[] | [];
+  filteredAndSortedToys: IToy[] | [];
 
   favorites: IToy[] | [];
 }
@@ -55,6 +59,10 @@ export interface IState {
 export const app = () => {
   const state: IState = {
     searchInput: '',
+
+    uiState: {
+      searchedToys: [],
+    },
 
     valueFilter: {
       shape: {
@@ -99,8 +107,8 @@ export const app = () => {
     filtersReset: false,
     settingsReset: false,
 
-    toys: data,
-    filteredToys: [],
+    toys: [...data],
+    filteredAndSortedToys: [],
 
     favorites: [],
   };
