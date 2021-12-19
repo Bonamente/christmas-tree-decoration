@@ -1,9 +1,27 @@
 .range {
-  width: 540px;
+  width: 35%;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: rgba(31, 112, 127, 0.3);
   backdrop-filter: blur(6px);
+
+  @media (max-width: 1530px) {
+    width: 35%;
+  }
+
+  @media (max-width: 1440px) {
+    width: 55%;
+    padding: 10px 90px;
+  }
+
+  @media (max-width: 1250px) {
+    width: 55%;
+    padding: 10px;
+  }
+
+  @media (max-width: 968px) {
+    width: 49%;
+  }
 }
 
 .range__title {
@@ -42,7 +60,6 @@ input[type='range'] {
 output {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
 
   min-width: 80px;
   height: 40px;
@@ -58,6 +75,26 @@ output {
   display: inline-block;
   height: 6px;
   width: 270px;
+
+  @media (max-width: 1530px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1440px) {
+    width: 55%;
+  }
+
+  @media (max-width: 968px) {
+    width: 50%;
+  }
+
+  @media (max-width: 870px) {
+    width: 45%;
+  }
+
+  @media (max-width: 810px) {
+    width: 40%;
+  }
 }
 
 // noUiSlider styles

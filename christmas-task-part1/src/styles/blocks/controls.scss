@@ -11,3 +11,9 @@
   font-size: 20px;
   line-height: 45px;
 }
+
+@media (max-width: 1440px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}

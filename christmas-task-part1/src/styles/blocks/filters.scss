@@ -1,9 +1,27 @@
 .filters {
-  width: 480px;
+  width: 30%;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: rgba(31, 112, 127, 0.3);
   backdrop-filter: blur(6px);
+
+  @media (max-width: 1530px) {
+    width: 30%;
+  }
+
+  @media (max-width: 1440px) {
+    width: 40%;
+    padding: 10px 90px;
+  }
+
+  @media (max-width: 1250px) {
+    width: 40%;
+    padding: 10px;
+  }
+
+  @media (max-width: 968px) {
+    width: 49%;
+  }
 }
 
 .filters__title {
