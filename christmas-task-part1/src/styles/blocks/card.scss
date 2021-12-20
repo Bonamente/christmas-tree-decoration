@@ -101,24 +101,37 @@
   border-left: 15px solid #cbb77a;
 }
 
+.card::before {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  content: 'Извините, все слоты заполнены';
+
+  height: 50px;
+
+  font-weight: bold;
+
+  border-radius: 10px 10px 0 0;
+  background-color: #000000;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.3s;
+}
+
 .card.count-exceeded {
   &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    visibility: visible;
+    opacity: 1;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    content: 'Извините, все слоты заполнены';
-
-    height: 50px;
-
-    font-weight: bold;
-
-    border-radius: 10px 10px 0 0;
-    background-color: #000000;
+    transform: translateY(25px);
+    transition: all 0.5s;
   }
 }
