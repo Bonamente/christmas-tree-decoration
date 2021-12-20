@@ -1,4 +1,5 @@
-import { IState } from '../../app';
+import { IState } from '../../types';
+
 import buildCard from './card';
 import getFilteredItems from '../../utils/filter';
 import getSortedItems from '../../utils/sorter';

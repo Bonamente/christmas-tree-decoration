@@ -1,5 +1,5 @@
-import { IToy } from '../../data';
-import { IState, favoritesMaxCount } from '../../app';
+import { IToy, IState } from '../../types';
+import { favoritesMaxCount } from '../../app';
 import setLocalStorage from '../../utils/set-local-storage';
 
 const buildCard = (state: IState, toy: IToy): Node => {

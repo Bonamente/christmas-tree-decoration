@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 import buildCards from '../builders/cards/cards';
 
 const renderCards = (state: IState): void => {

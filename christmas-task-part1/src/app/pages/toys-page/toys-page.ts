@@ -1,4 +1,4 @@
-import { IState } from '../../app';
+import { IState } from '../../types';
 import buildValueFilters from '../../builders/controls/value-filters/value-filters';
 import buildRangeFilters from '../../builders/controls/range-filters';
 import buildSortSection from '../../builders/controls/sort-section';

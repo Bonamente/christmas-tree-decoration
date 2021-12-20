@@ -1,4 +1,4 @@
-import { IState } from '../../app';
+import { IState } from '../../types';
 
 const buildRangeFilters = (state: IState): Node => {
   const rangeSection = document.createElement('section');

@@ -1,4 +1,4 @@
-import { IState } from '../../app';
+import { IState } from '../../types';
 
 import createCountSLider from '../../sliders/count-slider';
 import createYearSlider from '../../sliders/year-slider';

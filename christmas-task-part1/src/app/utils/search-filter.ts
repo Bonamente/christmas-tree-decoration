@@ -1,5 +1,4 @@
-import { IToy } from './../data';
-import { IState } from '../app';
+import { IToy, IState } from '../types';
 
 const getSearchedItems = (state: IState): IToy[] | [] => {
   const { searchInput, filteredAndSortedToys } = state;

@@ -1,4 +1,4 @@
-import { IState } from '../../../app';
+import { IState } from '../../../types';
 import setLocalStorage from '../../../utils/set-local-storage';
 import buildHtmlForFormElement from './form';
 import renderCards from '../../../renders/render-cards';

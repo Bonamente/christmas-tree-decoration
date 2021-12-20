@@ -1,5 +1,5 @@
 import noUiSlider, { target } from 'nouislider';
-import { IState } from '../app';
+import { IState } from '../types';
 import setLocalStorage from '../utils/set-local-storage';
 import renderCards from '../renders/render-cards';
 

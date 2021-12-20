@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 import buildHtmlForFormElement from '../builders/controls/value-filters/form';
 
 const renderValueFilters = (state: IState): void => {

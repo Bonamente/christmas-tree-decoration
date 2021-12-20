@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 import getSearchedItems from '../utils/search-filter';
 import renderSearchedCards from '../renders/render-searched-cards';
 

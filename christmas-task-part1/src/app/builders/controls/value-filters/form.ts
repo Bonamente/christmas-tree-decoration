@@ -1,4 +1,4 @@
-import { IState } from '../../../app';
+import { IState } from '../../../types';
 
 const buildHtmlForFormElement = (state: IState): string => {
   const { valueFilter } = state;

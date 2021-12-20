@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 import buildHeader from '../builders/header';
 import buildPageContent from '../builders/page-content';
 import buildFooter from '../builders/footer';

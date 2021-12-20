@@ -1,5 +1,4 @@
-import { IToy } from '../data';
-import { IState } from '../app';
+import { IToy, IState } from '../types';
 
 const collator = new Intl.Collator('ru', { caseFirst: 'upper' });
 const compareByNameAscending = (a: IToy, b: IToy) => collator.compare(a.name, b.name);

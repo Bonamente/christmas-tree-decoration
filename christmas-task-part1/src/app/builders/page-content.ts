@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 import buildToysPageContent from '../pages/toys-page/toys-page';
 
 const buildPageContent = (state: IState): Node => {

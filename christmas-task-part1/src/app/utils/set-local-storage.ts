@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 
 const setLocalStorage = (currentState: IState): void => {
   const { valueFilter, rangeFilters, sortingType, favoritesIds } = currentState;

@@ -1,43 +1,10 @@
-import { IToy, Data, data } from './data';
-import renderPage from './renders/page-render';
+import toysData from './toysData.json';
 
+import { IState } from './types';
+
+import renderPage from './renders/page-render';
 import createCountSLider from './sliders/count-slider';
 import createYearSlider from './sliders/year-slider';
-
-interface IValueFilters {
-  [key: string]: Record<string, boolean>;
-}
-
-export interface IState {
-  activePage: string;
-
-  searchInput: string;
-  uiState: {
-    searchedToys: Set<IToy[]>;
-  };
-
-  valueFilter: IValueFilters;
-
-  rangeFilters: {
-    countFilter: {
-      initMin: number;
-      initMax: number;
-      min: number;
-      max: number;
-    };
-    yearFilter: {
-      initMin: number;
-      initMax: number;
-      min: number;
-      max: number;
-    };
-  };
-
-  sortingType: string;
-  toys: Data;
-  filteredAndSortedToys: Set<IToy[]>;
-  favoritesIds: Set<number>;
-}
 
 export const favoritesMaxCount = 20;
 
@@ -92,7 +59,7 @@ export const app = () => {
     },
 
     sortingType: 'name-ascending',
-    toys: [...data],
+    toys: toysData,
     filteredAndSortedToys: new Set(),
     favoritesIds: new Set(),
   };

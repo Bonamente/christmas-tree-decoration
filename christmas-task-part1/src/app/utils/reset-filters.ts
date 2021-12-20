@@ -1,4 +1,4 @@
-import { IState } from '../app';
+import { IState } from '../types';
 
 const resetFilters = (state: IState): void => {
   const valueFilterkeys = Object.keys(state.valueFilter);

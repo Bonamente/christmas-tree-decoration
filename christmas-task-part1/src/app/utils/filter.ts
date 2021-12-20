@@ -1,8 +1,4 @@
-import { IToy } from '../data';
-import { Data } from '../data';
-import { IState } from '../app';
-
-type Mapping = { [key: string]: string };
+import { IToy, Data, IState, Mapping } from '../types';
 
 const mapping: Mapping = {
   шар: 'ball',
