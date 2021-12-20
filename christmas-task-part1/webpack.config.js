@@ -62,8 +62,6 @@ module.exports = ({ development }) => ({
       patterns: [
         {
           from: 'public',
-          to: 'assets',
-          noErrorOnMissing: true,
         },
         {
           from: path.resolve('src/assets/img/toys'),
