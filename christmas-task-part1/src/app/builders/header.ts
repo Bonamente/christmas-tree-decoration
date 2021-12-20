@@ -2,7 +2,7 @@ import { IState } from '../app';
 import getSearchedItems from '../utils/search-filter';
 import renderSearchedCards from '../renders/render-searched-cards';
 
-const buildHeader = (state: IState) => {
+const buildHeader = (state: IState): Node => {
   const { activePage, favoritesIds } = state;
 
   const headerElement = document.createElement('header');
@@ -41,7 +41,7 @@ const buildHeader = (state: IState) => {
   headerSearchInput.setAttribute('placeholder', 'найти игрушку...');
   headerSearchInput.setAttribute('autofocus', 'autofocus');
 
-  headerSearchInput.addEventListener('input', () => {
+  headerSearchInput.addEventListener('input', (): void => {
     headerSearchInput.classList.remove('header__search--stand-by');
 
     state.searchInput = headerSearchInput.value.toLowerCase();
@@ -67,9 +67,8 @@ const buildHeader = (state: IState) => {
       link.classList.add('active-page');
     }
 
-    link.addEventListener('click', (e: Event) => {
+    link.addEventListener('click', (e: Event): void => {
       e.preventDefault();
-
       const curPage = e.target as HTMLElement;
       // const pageId = curPage.getAttribute("id")
       // if (activePage === pageId) return;

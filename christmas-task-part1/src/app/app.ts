@@ -1,34 +1,22 @@
 import { IToy, Data, data } from './data';
+import renderPage from './renders/page-render';
+
+import createCountSLider from './sliders/count-slider';
+import createYearSlider from './sliders/year-slider';
+
+interface IValueFilters {
+  [key: string]: Record<string, boolean>;
+}
 
 export interface IState {
+  activePage: string;
+
   searchInput: string;
-
   uiState: {
-    searchedToys: IToy[] | [];
+    searchedToys: Set<IToy[]>;
   };
 
-  valueFilter: {
-    shape: {
-      ball: boolean;
-      bell: boolean;
-      cone: boolean;
-      snowflake: boolean;
-      figurine: boolean;
-    };
-    color: {
-      white: boolean;
-      yellow: boolean;
-      red: boolean;
-      blue: boolean;
-      green: boolean;
-    };
-    size: {
-      large: boolean;
-      medium: boolean;
-      small: boolean;
-    };
-    favorite: boolean;
-  };
+  valueFilter: IValueFilters;
 
   rangeFilters: {
     countFilter: {
@@ -46,22 +34,20 @@ export interface IState {
   };
 
   sortingType: string;
-
-  filtersReset: boolean;
-  settingsReset: boolean;
-
   toys: Data;
-  filteredAndSortedToys: IToy[] | [];
-
-  favorites: IToy[] | [];
+  filteredAndSortedToys: Set<IToy[]>;
+  favoritesIds: Set<number>;
 }
+
+export const favoritesMaxCount = 20;
 
 export const app = () => {
   const state: IState = {
-    searchInput: '',
+    activePage: 'toys-page', //'main-page', 'tree-page'
 
+    searchInput: '',
     uiState: {
-      searchedToys: [],
+      searchedToys: new Set(),
     },
 
     valueFilter: {
@@ -84,7 +70,10 @@ export const app = () => {
         medium: false,
         small: false,
       },
-      favorite: false,
+
+      favorite: {
+        favorite: false,
+      },
     },
 
     rangeFilters: {
@@ -102,14 +91,34 @@ export const app = () => {
       },
     },
 
-    sortingType: 'nameAscending', //   'nameDescending', 'yearAscending', 'yearDescending'
-
-    filtersReset: false,
-    settingsReset: false,
-
+    sortingType: 'name-ascending',
     toys: [...data],
-    filteredAndSortedToys: [],
-
-    favorites: [],
+    filteredAndSortedToys: new Set(),
+    favoritesIds: new Set(),
   };
+
+  const getCurrentState = (): IState => {
+    if (localStorage.getItem('savedSettings')) {
+      const savedSettings: IState = JSON.parse(localStorage.getItem('savedSettings') || '{}');
+      const { valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;   
+
+      const currentState = {
+        ...state,
+        valueFilter,
+        rangeFilters,
+        sortingType,
+        favoritesIds: new Set(favoritesIds),
+      };
+
+      return currentState;
+    }
+
+    return state;
+  };
+
+  const currentState = getCurrentState();  
+
+  renderPage(currentState);
+  createCountSLider(currentState);
+  createYearSlider(currentState);
 };

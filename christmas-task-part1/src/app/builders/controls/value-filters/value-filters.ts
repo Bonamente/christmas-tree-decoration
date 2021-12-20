@@ -1,8 +1,9 @@
-import { IState, setLocalStorage } from '../../../app';
+import { IState } from '../../../app';
+import setLocalStorage from '../../../utils/set-local-storage';
 import buildHtmlForFormElement from './form';
-import rerenderCards from '../../../renders/rerender-cards';
+import renderCards from '../../../renders/render-cards';
 
-const buildValueFilters = (state: IState) => {
+const buildValueFilters = (state: IState): Node => {
   const filtersSection = document.createElement('section');
   const filtersTitle = document.createElement('h2');
   const formElement = document.createElement('form');
@@ -15,7 +16,7 @@ const buildValueFilters = (state: IState) => {
 
   formElement.classList.add('filters__form', 'form');
 
-  formElement.addEventListener('change', (e: Event) => {
+  formElement.addEventListener('change', (e: Event): void => {
     const activeElement = e.target as HTMLInputElement;
     const [filterGroup, valueName] = activeElement.name.split('-');
 
@@ -25,8 +26,8 @@ const buildValueFilters = (state: IState) => {
       state.valueFilter[filterGroup][valueName] = false;
     }
 
+    renderCards(state); 
     setLocalStorage(state);
-    rerenderCards(state); 
   });
 
   filtersSection.append(filtersTitle, formElement);

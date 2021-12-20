@@ -1,4 +1,4 @@
-const buildFooter = () => {
+const buildFooter = (): Node => {
   const footerElement = document.createElement('footer');
   footerElement.classList.add('footer');
 

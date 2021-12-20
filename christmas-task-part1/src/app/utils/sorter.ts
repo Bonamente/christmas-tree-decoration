@@ -8,7 +8,7 @@ const compareByNameDescending = (a: IToy, b: IToy) => collator.compare(b.name, a
 const compareByYearAscending = (a: IToy, b: IToy): number => +a.year - +b.year;
 const compareByYearDescending = (a: IToy, b: IToy): number => +b.year - +a.year;
 
-const getSortedItems = (state: IState, items: IToy[]) => {
+const getSortedItems = (state: IState, items: IToy[]): IToy[] => {
   const { sortingType } = state;
 
   switch (sortingType) {

@@ -1,9 +1,9 @@
 import { IToy } from '../../data';
-import { IState, favoritesMaxCount, setLocalStorage } from '../../app';
+import { IState, favoritesMaxCount } from '../../app';
+import setLocalStorage from '../../utils/set-local-storage';
 
-const buildCard = (state: IState, toy: IToy) => {
+const buildCard = (state: IState, toy: IToy): Node => {
   const { favoritesIds } = state;
-
   const { id, name, count, year, shape, color, size, favorite } = toy;
 
   const cardElement = document.createElement('li') as HTMLElement;
@@ -29,7 +29,7 @@ const buildCard = (state: IState, toy: IToy) => {
     <div class="card__ribbon"></div>    
   `;
 
-  cardElement.addEventListener('click', () => {
+  cardElement.addEventListener('click', (): void => {
     const cardId = Number(cardElement.dataset.num);
     const toyCounterElement = document.querySelector('.toy-counter') as HTMLElement;
 
@@ -48,7 +48,7 @@ const buildCard = (state: IState, toy: IToy) => {
     cardElement.classList.toggle('active');
   });
 
-  cardElement.addEventListener('blur', () => {
+  cardElement.addEventListener('blur', (): void => {
     cardElement.classList.remove('count-exceeded');
   });
 

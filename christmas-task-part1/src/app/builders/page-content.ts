@@ -1,7 +1,7 @@
 import { IState } from '../app';
 import buildToysPageContent from '../pages/toys-page/toys-page';
 
-const buildPageContent = (state: IState) => {
+const buildPageContent = (state: IState): Node => {
   const { activePage } = state;
 
   const mainElement = document.createElement('main');

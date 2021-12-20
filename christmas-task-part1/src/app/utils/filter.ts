@@ -35,7 +35,7 @@ const filterByRange = (query: { [key: string]: number }, items: Data, key: keyof
   return items.filter((item) => min <= item[key] && item[key] <= max);
 };
 
-const getFilteredItems = (state: IState) => {
+const getFilteredItems = (state: IState): IToy[] | [] => {
   const { toys } = state;
   const { shape, color, size, favorite } = state.valueFilter;
   const { countFilter, yearFilter } = state.rangeFilters;

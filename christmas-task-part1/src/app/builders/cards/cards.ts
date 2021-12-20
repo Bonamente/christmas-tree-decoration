@@ -3,7 +3,7 @@ import buildCard from './card';
 import getFilteredItems from '../../utils/filter';
 import getSortedItems from '../../utils/sorter';
 
-const buildCards = (state: IState) => {
+const buildCards = (state: IState): Node[] => {
   const filtered = getFilteredItems(state);
   const filteredAndSorted = getSortedItems(state, filtered);
   state.filteredAndSortedToys.clear();

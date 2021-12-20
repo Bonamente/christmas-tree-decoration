@@ -1,7 +1,7 @@
 import { IState } from './../app';
 import buildCard from '../builders/cards/card';
 
-const renderSearchedCards = (state: IState) => {
+const renderSearchedCards = (state: IState): void => {
   const headerControls = document.querySelector('.header__controls') as HTMLElement; 
   const cardsList = document.querySelector('.cards__list') as HTMLElement;
 

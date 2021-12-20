@@ -1,6 +1,6 @@
 import { IState } from '../../app';
 
-const buildRangeFilters = (state: IState) => {
+const buildRangeFilters = (state: IState): Node => {
   const rangeSection = document.createElement('section');
   rangeSection.classList.add('range');
 

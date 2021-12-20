@@ -1,6 +1,6 @@
 import { IState } from '../app';
 
-const resetFilters = (state: IState) => {
+const resetFilters = (state: IState): void => {
   const valueFilterkeys = Object.keys(state.valueFilter);
 
   for (const key of valueFilterkeys) {

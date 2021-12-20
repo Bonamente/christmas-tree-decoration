@@ -1,6 +1,6 @@
 import { IState } from '../../../app';
 
-const buildHtmlForFormElement = (state: IState) => {
+const buildHtmlForFormElement = (state: IState): string => {
   const { valueFilter } = state;
   const { shape, color, size, favorite } = valueFilter;
 

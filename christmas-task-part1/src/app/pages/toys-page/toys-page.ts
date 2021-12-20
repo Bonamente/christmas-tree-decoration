@@ -1,10 +1,10 @@
 import { IState } from '../../app';
 import buildValueFilters from '../../builders/controls/value-filters/value-filters';
 import buildRangeFilters from '../../builders/controls/range-filters';
-import buildSortSection from '../../builders/controls/sort -section';
+import buildSortSection from '../../builders/controls/sort-section';
 import buildCards from '../../builders/cards/cards';
 
-const buildToysPageControls = (state: IState) => {
+const buildToysPageControls = (state: IState): Node => {
   const controlsSection = document.createElement('section');
   controlsSection.classList.add('controls');
   controlsSection.append(buildValueFilters(state), buildRangeFilters(state), buildSortSection(state));
@@ -12,7 +12,7 @@ const buildToysPageControls = (state: IState) => {
   return controlsSection;
 };
 
-const buildToysPageContent = (state: IState) => {
+const buildToysPageContent = (state: IState): HTMLElement => {
   const pageContainer = document.createElement('div');
   const heading1 = document.createElement('h1');
 
