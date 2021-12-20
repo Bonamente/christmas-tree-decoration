@@ -100,7 +100,7 @@ export const app = () => {
   const getCurrentState = (): IState => {
     if (localStorage.getItem('savedSettings')) {
       const savedSettings: IState = JSON.parse(localStorage.getItem('savedSettings') || '{}');
-      const { valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;   
+      const { valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;
 
       const currentState = {
         ...state,
@@ -116,7 +116,7 @@ export const app = () => {
     return state;
   };
 
-  const currentState = getCurrentState();  
+  const currentState = getCurrentState();
 
   renderPage(currentState);
   createCountSLider(currentState);

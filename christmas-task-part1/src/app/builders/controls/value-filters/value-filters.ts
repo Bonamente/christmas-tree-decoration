@@ -26,7 +26,7 @@ const buildValueFilters = (state: IState): Node => {
       state.valueFilter[filterGroup][valueName] = false;
     }
 
-    renderCards(state); 
+    renderCards(state);
     setLocalStorage(state);
   });
 

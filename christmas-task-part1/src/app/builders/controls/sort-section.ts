@@ -64,21 +64,21 @@ const buildSortSection = (state: IState): Node => {
   resetFiltersBtn.addEventListener('click', (): void => {
     resetFilters(state);
     renderValueFilters(state);
-    renderCards(state);  
+    renderCards(state);
     setLocalStorage(state);
-  }); 
+  });
 
-  resetSettingsBtn.addEventListener('click', (): void => {   
+  resetSettingsBtn.addEventListener('click', (): void => {
     localStorage.clear();
 
     resetFilters(state);
     state.searchInput = '';
     state.favoritesIds.clear();
-    state.sortingType = 'name-ascending';   
-    
+    state.sortingType = 'name-ascending';
+
     renderPage(state);
     createCountSLider(state);
-    createYearSlider(state);  
+    createYearSlider(state);
   });
 
   resetButtonsContainer.append(resetFiltersBtn, resetSettingsBtn);

@@ -38,7 +38,7 @@ const createYearSlider = (state: IState): void => {
   const resetFiltersBtn = document.querySelector('.reset__filters-btn') as HTMLElement;
 
   resetFiltersBtn.addEventListener('click', (): void => {
-    yearSlider?.noUiSlider?.set([initMin, initMax]);    
+    yearSlider?.noUiSlider?.set([initMin, initMax]);
   });
 };
 

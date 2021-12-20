@@ -9,7 +9,7 @@ const renderPage = (state: IState): void => {
   const footer = buildFooter();
 
   document.body.innerHTML = '';
-  document.body.append(header, pageContent, footer);  
+  document.body.append(header, pageContent, footer);
 };
 
 export default renderPage;

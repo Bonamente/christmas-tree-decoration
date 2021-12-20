@@ -37,8 +37,8 @@ const createCountSLider = (state: IState): void => {
 
   const resetFiltersBtn = document.querySelector('.reset__filters-btn') as HTMLElement;
 
-  resetFiltersBtn.addEventListener('click', (): void => {    
-    countSlider?.noUiSlider?.set([initMin, initMax]);    
+  resetFiltersBtn.addEventListener('click', (): void => {
+    countSlider?.noUiSlider?.set([initMin, initMax]);
   });
 };
 
