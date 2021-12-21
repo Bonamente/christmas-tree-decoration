@@ -1,16 +1,12 @@
 import toysData from './toysData.json';
-
 import { IState } from './types';
-
-import renderPage from './renders/page-render';
-import createCountSLider from './sliders/count-slider';
-import createYearSlider from './sliders/year-slider';
+import renderPage from './renders/render-page';
 
 export const favoritesMaxCount = 20;
 
 export const app = () => {
   const state: IState = {
-    activePage: 'toys-page', //'main-page', 'tree-page'
+    activePage: 'main-page', //'toys-page', 'tree-page'
 
     searchInput: '',
     uiState: {
@@ -85,7 +81,5 @@ export const app = () => {
 
   const currentState = getCurrentState();
 
-  renderPage(currentState);
-  createCountSLider(currentState);
-  createYearSlider(currentState);
+  renderPage(currentState); 
 };

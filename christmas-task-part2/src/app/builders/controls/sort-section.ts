@@ -1,13 +1,9 @@
 import { IState } from '../../types';
-
-import createCountSLider from '../../sliders/count-slider';
-import createYearSlider from '../../sliders/year-slider';
-
 import resetFilters from '../../utils/reset-filters';
 import setLocalStorage from '../../utils/set-local-storage';
 import renderValueFilters from '../../renders/render-value-filters';
 import renderCards from '../../renders/render-cards';
-import renderPage from '../../renders/page-render';
+import renderPage from '../../renders/render-page';
 
 const buildSortSection = (state: IState): Node => {
   const sortSection = document.createElement('section');
@@ -77,8 +73,6 @@ const buildSortSection = (state: IState): Node => {
     state.sortingType = 'name-ascending';
 
     renderPage(state);
-    createCountSLider(state);
-    createYearSlider(state);
   });
 
   resetButtonsContainer.append(resetFiltersBtn, resetSettingsBtn);
