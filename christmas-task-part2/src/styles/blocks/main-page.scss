@@ -1,0 +1,120 @@
+.page-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 50px;
+}
+
+.main-page__image {
+  position: absolute;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &::before {
+    position: absolute;
+
+    content: '';
+    background-color: #aaaaaa;
+  }
+
+  &--ball-1 {
+    top: 120px;
+    left: calc(50% - 550px);
+
+    width: 500px;
+    height: 500px;
+
+    background-image: url('../assets/img/ball/1.png');
+
+    &::before {
+      top: -215px;
+      left: calc(50% - 47px);
+
+      width: 5px;
+      height: 220px;
+    }
+  }
+
+  &--ball-2 {
+    top: 120px;
+    left: calc(50% + 150px);
+
+    width: 300px;
+    height: 300px;
+
+    background-image: url('../assets/img/ball/2.png');
+
+    &::before {
+      top: -207px;
+      left: calc(50% - 32px);
+
+      width: 5px;
+      height: 210px;
+    }
+  }
+}
+
+.main-page__title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  width: 600px;
+  height: 250px;
+  margin-bottom: 80px;
+  margin-top: 220px;
+
+  font-size: 48px;
+  font-weight: 400;
+  color: $main-text;
+  text-align: center;
+
+  border: 3px solid $main-color;
+  border-radius: 25px;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+
+  span {
+    width: 100%;
+  }
+}
+
+.main-page__start-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 320px;
+  height: 60px;
+
+  font-family: $font-family-primary;
+  font-size: 28px;
+  color: $main-text;
+  text-decoration: none;
+
+  border: 3px solid $main-color;
+  border-radius: 30px;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+
+  outline: 1px solid;
+  outline-offset: 0px;
+  outline-color: rgba(255, 255, 255, 0.5);
+  transition: all 3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.3s;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    outline-offset: 15px;
+    outline-color: rgba(255, 255, 255, 0);
+  }
+}

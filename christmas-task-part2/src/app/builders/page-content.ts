@@ -1,5 +1,6 @@
 import { IState } from '../types';
 import buildToysPageContent from '../pages/toys-page/toys-page';
+import buildMainPageContent from '../pages/main-page/main-page';
 
 const buildPageContent = (state: IState): Node => {
   const { activePage } = state;
@@ -14,7 +15,7 @@ const buildPageContent = (state: IState): Node => {
 
   switch (activePage) {
     case 'main-page':
-      activePageContent = buildToysPageContent(state); //TODO replace with buildMainPageContent();
+      activePageContent = buildMainPageContent(state);
       break;
     case 'toys-page':
       activePageContent = buildToysPageContent(state);
