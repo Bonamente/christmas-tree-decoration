@@ -11,8 +11,7 @@ const buildHeader = (state: IState): Node => {
   const MainPageLink = document.createElement('a');
   const ToysPageLink = document.createElement('a');
   const TreePageLink = document.createElement('a');
-  const headerControls = document.createElement('div');
-  const headerSearchInput = document.createElement('input');
+  const headerControls = document.createElement('div');  
   const headerCounter = document.createElement('div');
   const toyCounter = document.createElement('span');
 
@@ -34,27 +33,6 @@ const buildHeader = (state: IState): Node => {
   TreePageLink.textContent = 'ёлка';
 
   headerControls.classList.add('header__controls');
-
-  headerSearchInput.classList.add('header__search', 'header__search--stand-by');
-  headerSearchInput.setAttribute('type', 'search');
-  headerSearchInput.setAttribute('autocomplete', 'off');
-  headerSearchInput.setAttribute('placeholder', 'найти игрушку...');
-  headerSearchInput.setAttribute('autofocus', 'autofocus');
-
-  headerSearchInput.addEventListener('input', (): void => {
-    headerSearchInput.classList.remove('header__search--stand-by');
-
-    state.searchInput = headerSearchInput.value.toLowerCase();
-    state.uiState.searchedToys.clear();
-    state.uiState.searchedToys.add(getSearchedItems(state));
-
-    if (headerSearchInput.value === '') {
-      headerSearchInput.classList.add('header__search--stand-by');
-    }
-
-    renderSearchedCards(state);
-  });
-
   headerCounter.classList.add('header__counter');
 
   toyCounter.classList.add('toy-counter');
@@ -80,11 +58,33 @@ const buildHeader = (state: IState): Node => {
     });
   });
 
-  headerNav.append(MainPageLink, ToysPageLink, TreePageLink);
+  headerNav.append(...pageLinks);
   headerContainer.append(headerNav);
   headerCounter.append(toyCounter);
 
   if (activePage === 'toys-page') {
+    const headerSearchInput = document.createElement('input');
+
+    headerSearchInput.classList.add('header__search', 'header__search--stand-by');
+    headerSearchInput.setAttribute('type', 'search');
+    headerSearchInput.setAttribute('autocomplete', 'off');
+    headerSearchInput.setAttribute('placeholder', 'найти игрушку...');
+    headerSearchInput.setAttribute('autofocus', 'autofocus');
+  
+    headerSearchInput.addEventListener('input', (): void => {
+      headerSearchInput.classList.remove('header__search--stand-by');
+  
+      state.searchInput = headerSearchInput.value.toLowerCase();
+      state.uiState.searchedToys.clear();
+      state.uiState.searchedToys.add(getSearchedItems(state));
+  
+      if (headerSearchInput.value === '') {
+        headerSearchInput.classList.add('header__search--stand-by');
+      }
+  
+      renderSearchedCards(state);
+    });
+
     headerControls.append(headerSearchInput, headerCounter);
   } else {
     headerControls.append(headerCounter);
