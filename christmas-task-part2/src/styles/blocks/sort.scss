@@ -1,0 +1,79 @@
+.sort {
+  width: 30%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(31, 112, 127, 0.3);
+  backdrop-filter: blur(6px);
+
+  @media (max-width: 1530px) {
+    width: 30%;
+  }
+
+  @media (max-width: 1440px) {
+    display: flex;
+
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 90px;
+    padding-bottom: 0;
+  }
+
+  @media (max-width: 1250px) {
+    padding: 10px;
+  }
+}
+
+.sort__title {
+  height: 60px;
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 60px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @media (max-width: 1440px) {
+    margin-right: 20px;
+  }
+}
+
+.sort__select {
+  width: 380px;
+  height: 40px;
+  margin: 10px 0;
+  margin-bottom: 145px;
+  padding: 5px 20px;
+
+  font: inherit;
+  font-size: 20px;
+  line-height: 32px;
+  color: $main-text;
+
+  appearance: none;
+
+  border: 1px solid $main-color;
+  border-radius: 20px;
+  background-color: rgba(31, 112, 127, 0.3);
+  background-image: url('../assets/svg/arrow-down.svg');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 350px center;
+  backdrop-filter: blur(6px);
+
+  outline: none;
+
+  cursor: pointer;
+
+  &:focus {
+    border-color: #cccccc;
+  }
+
+  option {
+    color: inherit;
+    background-color: #183e42;
+  }
+
+  @media (max-width: 1440px) {
+    margin-bottom: 125px;
+  }
+}

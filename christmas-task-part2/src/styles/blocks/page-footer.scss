@@ -1,0 +1,58 @@
+.footer {
+  background-color: #121c1e;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: $desktop-width;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer__data {
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright {
+  padding-right: 5px;
+}
+
+.footer__github {
+  padding: 0 20px;
+
+  color: $main-text;
+  text-decoration: none;
+
+  outline: none;
+
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+}
+
+.footer__logo {
+  width: 160px;
+  height: 60px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../assets/svg/rss.svg');
+
+  outline: none;
+
+  transition: 0.3s;
+
+  &:hover,
+  &:focus {
+    filter: invert(57%) sepia(100%) saturate(329%) hue-rotate(141deg) brightness(89%) contrast(90%);
+  }
+}

@@ -1,0 +1,19 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: $desktop-width;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  font-size: 20px;
+  line-height: 45px;
+}
+
+@media (max-width: 1440px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
