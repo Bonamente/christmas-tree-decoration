@@ -6,11 +6,23 @@ export const favoritesMaxCount = 20;
 
 export const app = () => {
   const state: IState = {
-    activePage: 'main-page', //'toys-page', 'tree-page'
+    activePage: 'tree-page', //'main-page' 'toys-page', 'tree-page'
 
     searchInput: '',
     uiState: {
       searchedToys: new Set(),
+    },
+
+    mediaForm: {    
+      audio: false,
+      snow: false,
+      garland: false,      
+    },
+
+    treeForm: {
+      tree: 1,
+      bg: 1,
+      garland: 'multicolored', 
     },
 
     valueFilter: {

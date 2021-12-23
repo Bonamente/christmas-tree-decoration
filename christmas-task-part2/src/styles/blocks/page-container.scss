@@ -3,4 +3,25 @@
   max-width: $desktop-width;
   margin: 0 auto;
   padding: 0 20px;
+
+  &--main-page {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 50px;
+  }
+
+  // &--tree {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: flex-start;
+  //   align-content: flex-start;
+
+  //   height: calc(100vh - 140px);
+  //   min-height: 750px;
+  // }
 }

@@ -1,6 +1,7 @@
 import { IState } from '../types';
 import buildToysPageContent from '../pages/toys-page/toys-page';
 import buildMainPageContent from '../pages/main-page/main-page';
+import buildTreePageContent from '../pages/tree-page/tree-page';
 
 const buildPageContent = (state: IState): Node => {
   const { activePage } = state;
@@ -21,13 +22,13 @@ const buildPageContent = (state: IState): Node => {
       activePageContent = buildToysPageContent(state);
       break;
     case 'tree-page':
-      activePageContent = buildToysPageContent(state); //TODO replace with buildTreePageContent();
+      activePageContent = buildTreePageContent(state);
       break;
     default:
       throw new Error('invalid activePage value');
   }
 
-  overlayElement.append(activePageContent);
+  overlayElement.append(activePageContent);  
   mainElement.append(overlayElement);
 
   return mainElement;

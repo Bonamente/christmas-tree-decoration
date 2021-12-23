@@ -5,7 +5,7 @@ const buildMainPageContent = (state: IState): HTMLElement => {
   const pageContainer = document.createElement('div');
   const startButton = document.createElement('a');
 
-  pageContainer.classList.add('page-container');
+  pageContainer.classList.add('page-container', 'page-container--main-page');
   pageContainer.innerHTML = `
   <div class="main-page__image main-page__image--ball-1"></div>
   <div class="main-page__image main-page__image--ball-2 ball2"></div>
