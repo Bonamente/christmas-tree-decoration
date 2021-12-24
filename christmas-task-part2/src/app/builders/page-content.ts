@@ -28,7 +28,7 @@ const buildPageContent = (state: IState): Node => {
       throw new Error('invalid activePage value');
   }
 
-  overlayElement.append(activePageContent);  
+  overlayElement.append(activePageContent);
   mainElement.append(overlayElement);
 
   return mainElement;

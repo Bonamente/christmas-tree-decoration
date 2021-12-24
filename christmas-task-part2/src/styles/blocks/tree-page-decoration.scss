@@ -1,0 +1,63 @@
+.decoration {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background-image: url('../assets/img/tree-bg/1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 140px);
+  min-height: 750px;
+  width: 800px;
+  padding-bottom: 20px;
+  overflow: hidden;
+
+  &.bg-tree-1 {
+    background-image: url('../assets/img/tree-bg/1.jpg');
+  }
+
+  &.bg-tree-2 {
+    background-image: url('../assets/img/tree-bg/2.jpg');
+  }
+
+  &.bg-tree-3 {
+    background-image: url('../assets/img/tree-bg/3.jpg');
+  }
+
+  &.bg-tree-4 {
+    background-image: url('../assets/img/tree-bg/4.jpg');
+  }
+
+  &.bg-tree-5 {
+    background-image: url('../assets/img/tree-bg/5.jpg');
+  }
+
+  &.bg-tree-6 {
+    background-image: url('../assets/img/tree-bg/6.jpg');
+  }
+
+  &.bg-tree-7 {
+    background-image: url('../assets/img/tree-bg/7.jpg');
+  }
+
+  &.bg-tree-8 {
+    background-image: url('../assets/img/tree-bg/8.jpg');
+  }
+
+  &.bg-tree-9 {
+    background-image: url('../assets/img/tree-bg/9.jpg');
+  }
+
+  &.bg-tree-10 {
+    background-image: url('../assets/img/tree-bg/10.jpg');
+  }
+}
+
+.decoration__tree {
+  display: block;
+  width: 500px;
+  // height: 714px;
+  height: calc(100vh - 140px);
+}

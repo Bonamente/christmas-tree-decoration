@@ -20,7 +20,7 @@ const buildMainPageContent = (state: IState): HTMLElement => {
     e.preventDefault();
     state.activePage = 'toys-page';
     renderPage(state);
-  })
+  });
 
   pageContainer.append(startButton);
 

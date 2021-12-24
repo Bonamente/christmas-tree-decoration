@@ -11,7 +11,7 @@ const buildHeader = (state: IState): Node => {
   const MainPageLink = document.createElement('a');
   const ToysPageLink = document.createElement('a');
   const TreePageLink = document.createElement('a');
-  const headerControls = document.createElement('div');  
+  const headerControls = document.createElement('div');
   const headerCounter = document.createElement('div');
   const toyCounter = document.createElement('span');
 
@@ -70,18 +70,18 @@ const buildHeader = (state: IState): Node => {
     headerSearchInput.setAttribute('autocomplete', 'off');
     headerSearchInput.setAttribute('placeholder', 'найти игрушку...');
     headerSearchInput.setAttribute('autofocus', 'autofocus');
-  
+
     headerSearchInput.addEventListener('input', (): void => {
       headerSearchInput.classList.remove('header__search--stand-by');
-  
+
       state.searchInput = headerSearchInput.value.toLowerCase();
       state.uiState.searchedToys.clear();
       state.uiState.searchedToys.add(getSearchedItems(state));
-  
+
       if (headerSearchInput.value === '') {
         headerSearchInput.classList.add('header__search--stand-by');
       }
-  
+
       renderSearchedCards(state);
     });
 

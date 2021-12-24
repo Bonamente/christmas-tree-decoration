@@ -20,6 +20,8 @@ html {
 }
 
 body {
+  position: relative;
+
   margin: 0;
   padding: 0;
   max-width: 100%;
@@ -28,7 +30,7 @@ body {
   font-size: $font-size-base;
   line-height: 1.5;
   font-weight: 400;
-  color: #fff;
+  color: $main-text;
 }
 
 img {

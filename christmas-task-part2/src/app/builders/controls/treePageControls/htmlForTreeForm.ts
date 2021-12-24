@@ -122,8 +122,8 @@ const buildHtmlForTreeForm = (state: IState): string => {
       <legend class="garland-form__title">Гирлянда</legend>
       <ul class="garland-form__list">
         <li class="garland-form__item">
-          <input class="garland-form__input sr-only" id="multicolored" type="radio" name="garland" value="multicolored"        
-          ${garland === 'multicolored' ? 'checked' : ''}>
+          <input class="garland-form__input sr-only" id="multicolored" type="radio" 
+          name="garland" value="multicolored" ${garland === 'multicolored' ? 'checked' : ''}>
           <label class="garland-form__label garland-form__label--multicolored" for="multicolored">
           <span class="sr-only">Разноцветная</span></label>
         </li>

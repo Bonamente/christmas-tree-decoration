@@ -1,4 +1,4 @@
-import { IState } from '../../../types'; 
+import { IState } from '../../../types';
 import buildTreeForm from './tree-form';
 import buildMediaForm from './media-form';
 
@@ -11,7 +11,7 @@ const buildTreePageSettings = (state: IState): Node => {
   const treeSettingsTitle = document.createElement('h3');
   const settingsButtonContainer = document.createElement('div');
   const resetSettingsBtn = document.createElement('button');
-  
+
   settingsSection.classList.add('settings');
   settingsSectionTitle.textContent = 'Настройки';
   settingsSectionTitle.classList.add('settings__title', 'sr-only');
@@ -23,21 +23,18 @@ const buildTreePageSettings = (state: IState): Node => {
   treeSettings.classList.add('settings__tree-settings', 'tree-settings');
   treeSettingsTitle.textContent = 'Настройки ёлки';
   treeSettingsTitle.classList.add('tree-settings__title', 'sr-only');
-  
+
   settingsButtonContainer.classList.add('settings__btn-container');
   resetSettingsBtn.classList.add('settings__reset-btn');
   resetSettingsBtn.textContent = 'Сброс настроек';
 
   resetSettingsBtn.addEventListener('click', (): void => {
     //TODO logic
-
     // localStorage.clear();
-
     // resetFilters(state);
     // state.searchInput = '';
     // state.favoritesIds.clear();
     // state.sortingType = 'name-ascending';
-
     // renderPage(state);
   });
 

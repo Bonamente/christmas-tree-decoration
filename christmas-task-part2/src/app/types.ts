@@ -15,7 +15,7 @@ export interface IValueFilters {
   [key: string]: Record<string, boolean>;
 }
 
-export interface IMediaForm { 
+export interface IMediaForm {
   [key: string]: boolean;
 }
 

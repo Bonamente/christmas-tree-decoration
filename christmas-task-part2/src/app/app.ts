@@ -13,16 +13,16 @@ export const app = () => {
       searchedToys: new Set(),
     },
 
-    mediaForm: {    
+    mediaForm: {
       audio: false,
       snow: false,
-      garland: false,      
+      garland: false,
     },
 
     treeForm: {
       tree: 1,
       bg: 1,
-      garland: 'multicolored', 
+      garland: 'multicolored',
     },
 
     valueFilter: {
@@ -93,5 +93,5 @@ export const app = () => {
 
   const currentState = getCurrentState();
 
-  renderPage(currentState); 
+  renderPage(currentState);
 };
