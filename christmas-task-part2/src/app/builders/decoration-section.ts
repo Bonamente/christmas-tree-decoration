@@ -7,11 +7,9 @@ const buildDecorationSection = (state: IState): Node => {
 
   decorationSection.innerHTML = `
     <h2 class="decoration__title sr-only">Украшаемая ёлка</h2>    
-    <div class="decoration__snowflakes"></div>
     <div class="decoration__garland"></div>
-    <map name="tree-map">
-      <area coords="365,699,189,706,113,683,31,608,2,555,2,539,18,437,73,351,106,224,
-      161,134,243,-1,306,75,353,144,399,221,424,359,452,459,496,550,444,664" shape="poly">
+    <map name="tree-map">    
+      <area coords="325,240,485,630,284,111,268,65,264,49,248,13,193,113,8,625,485,632,484,634,9,624,64,469,7,624,76,684,439,688,485,627,485,630,335,226,8,625" shape="poly">
     </map>
     <img class="decoration__tree" src="./trees/${tree}.png"  usemap="#tree-map" alt="украшаемая ёлка">        
   `;
