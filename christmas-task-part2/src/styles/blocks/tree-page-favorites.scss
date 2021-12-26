@@ -1,0 +1,73 @@
+.favorites {
+  width: 400px;
+  height: 100%;
+  padding: 20px 0;
+  padding-left: 20px;
+}
+
+.favorites__title {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.favorites__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+
+  width: 100%;
+}
+
+.favorites__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25%;
+  max-width: 80px;
+  min-height: 80px;
+
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.fav-card__count {
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-left: 60px;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: unset;
+  font-weight: bold;
+
+  border-radius: 50%;
+  background-color: $main-color;
+}
+
+.fav-card__img {
+  position: absolute;
+  z-index: 100;
+
+  display: block;
+  width: 50px;
+  height: 50px;
+
+  object-fit: contain;
+  cursor: move;
+}

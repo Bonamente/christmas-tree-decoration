@@ -1,6 +1,7 @@
 import { IState } from '../../types';
 import buildTreePageSettings from '../../builders/controls/treePageControls/buildTreePageSettings';
 import buildDecorationSection from '../../builders/decoration-section';
+import buildFavoritesSection from '../../builders/favorites-section';
 
 const buildTreePageContent = (state: IState): HTMLElement => {
   const pageContainer = document.createElement('div');
@@ -10,7 +11,12 @@ const buildTreePageContent = (state: IState): HTMLElement => {
   heading1.classList.add('sr-only');
   heading1.textContent = 'Нарядите ёлку';
 
-  pageContainer.append(heading1, buildTreePageSettings(state), buildDecorationSection(state));
+  pageContainer.append(
+    heading1,
+    buildTreePageSettings(state),
+    buildDecorationSection(state),
+    buildFavoritesSection(state)
+  );
 
   return pageContainer;
 };
