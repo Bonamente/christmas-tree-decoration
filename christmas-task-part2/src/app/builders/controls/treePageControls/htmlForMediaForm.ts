@@ -1,7 +1,7 @@
 import { IState } from '../../../types';
 
 const buildHtmlForMediaForm = (state: IState): string => {
-  const { mediaForm } = state;
+  const { mediaForm } = state;  
 
   return `
     <fieldset class="form__media media-form">

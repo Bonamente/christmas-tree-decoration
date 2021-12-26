@@ -5,8 +5,11 @@ import renderPage from './renders/render-page';
 export const favoritesMaxCount = 20;
 
 export const app = () => {
+
+  // localStorage.clear();
+
   const state: IState = {
-    activePage: 'tree-page', //'main-page' 'toys-page', 'tree-page'
+    activePage: 'tree-page', //'tree-page', //'main-page' 'toys-page', 'tree-page'
 
     searchInput: '',
     uiState: {
@@ -75,10 +78,19 @@ export const app = () => {
   const getCurrentState = (): IState => {
     if (localStorage.getItem('savedSettings')) {
       const savedSettings: IState = JSON.parse(localStorage.getItem('savedSettings') || '{}');
-      const { valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;
+      const {  
+        mediaForm,
+        treeForm,
+        valueFilter, 
+        rangeFilters, 
+        sortingType, 
+        favoritesIds 
+      } = savedSettings;
 
       const currentState = {
         ...state,
+        mediaForm,
+        treeForm,
         valueFilter,
         rangeFilters,
         sortingType,

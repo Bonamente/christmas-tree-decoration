@@ -1,6 +1,9 @@
 import { IState } from '../../../types';
 import buildTreeForm from './tree-form';
 import buildMediaForm from './media-form';
+import renderPage from '../../../renders/render-page';
+import makeSnow from '../../../utils/media/make-snow';
+import playMusic from '../../../utils/media/play-music';
 
 const buildTreePageSettings = (state: IState): Node => {
   const settingsSection = document.createElement('section');
@@ -29,13 +32,18 @@ const buildTreePageSettings = (state: IState): Node => {
   resetSettingsBtn.textContent = 'Сброс настроек';
 
   resetSettingsBtn.addEventListener('click', (): void => {
-    //TODO logic
-    // localStorage.clear();
-    // resetFilters(state);
-    // state.searchInput = '';
-    // state.favoritesIds.clear();
-    // state.sortingType = 'name-ascending';
-    // renderPage(state);
+    localStorage.clear();
+    
+    makeSnow(false);
+    playMusic(false);
+    state.mediaForm.audio = false;
+    state.mediaForm.snow = false;
+    state.mediaForm.garland = false;
+    state.treeForm.tree = 1;
+    state.treeForm.bg = 1;
+    state.treeForm.garland = 'multicolored';
+    
+    renderPage(state);
   });
 
   settingsButtonContainer.append(resetSettingsBtn);

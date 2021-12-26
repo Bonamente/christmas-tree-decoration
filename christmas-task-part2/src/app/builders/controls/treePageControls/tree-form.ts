@@ -1,7 +1,6 @@
 import { IState } from '../../../types';
-// import setLocalStorage from '../../../utils/set-local-storage';
+import setLocalStorage from '../../../utils/set-local-storage';
 import buildHtmlForTreePageForm from './htmlForTreeForm';
-// import renderTreeForm from '../../../renders/renderTreeForm';
 import changeDecorations from '../../../utils/decoration/change-decorations';
 
 const buildTreeForm = (state: IState): Node => {
@@ -17,9 +16,8 @@ const buildTreeForm = (state: IState): Node => {
 
     state.treeForm[name] = currentValue;
 
-    changeDecorations(state);
-    //TODO
-    // setLocalStorage(state);
+    changeDecorations(state);  
+    setLocalStorage(state);
   });
 
   return formElement;
