@@ -17,11 +17,11 @@
 
   &--tree {
     display: flex;
-    // justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
 
-    height: calc(100vh - 140px);
-    min-height: 750px;
+    @media (max-width: 1280px) {
+      flex-wrap: wrap;
+    }
   }
 }

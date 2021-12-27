@@ -1,7 +1,12 @@
 .settings {
-  width: 400px;
+  width: 26%;
   height: 100%;
   padding: 20px 0;
+
+  @media (max-width: 1280px) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .media-form,
@@ -97,6 +102,11 @@
   height: 115px;
 
   border-radius: 10px;
+
+  @media (max-width: 1366px) {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .tree-form__label {
@@ -109,7 +119,6 @@
 
   border: 3px solid transparent;
   border-radius: 10px;
-  // outline: 0;
 
   background-color: #fffafa;
   background-size: contain;
@@ -294,4 +303,92 @@
   justify-content: center;
 
   padding-right: 35px;
+}
+
+@media (max-width: 1280px) {
+  .settings {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+  }
+
+  .tree-settings__form {
+    display: flex;
+    column-gap: 15px;
+  }
+
+  .media-form__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .tree-form__list {
+    width: 260px;
+  }
+
+  .bg-form__list {
+    width: 365px;
+  }
+
+  .garland-form__inner-wrapper {
+    padding-right: 0;
+  }
+
+  .garland-form__list {
+    width: 60px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .settings__btn-container {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .settings {
+    position: relative;
+
+    justify-content: unset;
+
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .tree-settings__form {
+    column-gap: 24px;
+  }
+
+  .tree-form__title,
+  .bg-form__title,
+  .garland-form__title {
+    text-align: center;
+  }
+
+  .media-form__list {
+    padding-top: 60px;
+    padding-right: 20px;
+  }
+
+  .tree-form__list {
+    width: 170px;
+  }
+
+  .bg-form__list {
+    width: 220px;
+  }
+
+  .garland-form__list {
+    width: 175px;
+    justify-content: space-between;
+  }
+
+  .settings__btn-container {
+    position: absolute;
+    right: 15px;
+    bottom: 200px;
+
+    padding-right: 0;
+  }
 }
