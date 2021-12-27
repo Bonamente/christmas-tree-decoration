@@ -33,16 +33,16 @@ const buildTreePageSettings = (state: IState): Node => {
 
   resetSettingsBtn.addEventListener('click', (): void => {
     localStorage.clear();
-    
     makeSnow(false);
     playMusic(false);
+
     state.mediaForm.audio = false;
     state.mediaForm.snow = false;
     state.mediaForm.garland = false;
     state.treeForm.tree = 1;
     state.treeForm.bg = 1;
     state.treeForm.garland = 'multicolored';
-    
+
     renderPage(state);
   });
 

@@ -26,22 +26,23 @@ const renderPage = (state: IState): void => {
 
   if (activePage === 'tree-page') {
     const { audio, snow, garland } = state.mediaForm;
-   
+
     if (audio) {
       const listener = () => {
         playMusic(true);
         document.removeEventListener('click', listener);
       };
-      
-      document.addEventListener('click', listener);  
+
+      document.addEventListener('click', listener);
     }
 
-    if (snow) {     
+    if (snow) {
       makeSnow(true);
-    } 
+    }
+
     if (garland) {
       makeGarland(true, `${state.treeForm.garland}`);
-    } 
+    }
   }
 };
 

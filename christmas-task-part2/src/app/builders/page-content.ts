@@ -1,6 +1,6 @@
 import { IState } from '../types';
-import buildToysPageContent from '../pages/toys-page/toys-page';
 import buildMainPageContent from '../pages/main-page/main-page';
+import buildToysPageContent from '../pages/toys-page/toys-page';
 import buildTreePageContent from '../pages/tree-page/tree-page';
 
 const buildPageContent = (state: IState): Node => {

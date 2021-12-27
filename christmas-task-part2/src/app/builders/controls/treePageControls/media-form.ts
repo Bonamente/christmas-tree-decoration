@@ -1,7 +1,6 @@
 import { IState } from '../../../types';
 import setLocalStorage from '../../../utils/set-local-storage';
 import buildHtmlForMediaForm from './htmlForMediaForm';
-// import renderMediaForm from '../../../renders/renderMediaForm';
 import runMedia from '../../../utils/media/run-media';
 
 const buildMediaForm = (state: IState): Node => {
@@ -21,8 +20,8 @@ const buildMediaForm = (state: IState): Node => {
       state.mediaForm[name] = false;
     }
 
-    runMedia(state, [audio, snow, garland]);   
-    setLocalStorage(state);  
+    runMedia(state, [audio, snow, garland]);
+    setLocalStorage(state);
   });
 
   return formElement;

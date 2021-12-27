@@ -16,7 +16,7 @@ const buildTreeForm = (state: IState): Node => {
 
     state.treeForm[name] = currentValue;
 
-    changeDecorations(state);  
+    changeDecorations(state);
     setLocalStorage(state);
   });
 

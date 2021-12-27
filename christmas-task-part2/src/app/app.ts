@@ -5,11 +5,8 @@ import renderPage from './renders/render-page';
 export const favoritesMaxCount = 20;
 
 export const app = () => {
-
-  // localStorage.clear();
-
   const state: IState = {
-    activePage: 'tree-page', //'tree-page', //'main-page' 'toys-page', 'tree-page'
+    activePage: 'main-page',
 
     searchInput: '',
     uiState: {
@@ -78,17 +75,11 @@ export const app = () => {
   const getCurrentState = (): IState => {
     if (localStorage.getItem('savedSettings')) {
       const savedSettings: IState = JSON.parse(localStorage.getItem('savedSettings') || '{}');
-      const {  
-        mediaForm,
-        treeForm,
-        valueFilter, 
-        rangeFilters, 
-        sortingType, 
-        favoritesIds 
-      } = savedSettings;
+      const { activePage, mediaForm, treeForm, valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;
 
       const currentState = {
         ...state,
+        activePage,
         mediaForm,
         treeForm,
         valueFilter,
@@ -104,6 +95,18 @@ export const app = () => {
   };
 
   const currentState = getCurrentState();
-
   renderPage(currentState);
+
+  //Remove after check
+  console.log(`
+    Самооценка - 190 баллов.
+
+    Выполнены все пункты задания, кроме пункта:
+      "повешенные на ёлку игрушки можно снимать с ёлки, 
+      при этом они возвращаются в свой слот +10 баллов".
+
+    В текущей реализации игрушку можно снять с ёлки непосредственно перетащив в свой слот.
+
+    Благодарю за проверку и с наступающим Новым годом!
+  `);
 };
