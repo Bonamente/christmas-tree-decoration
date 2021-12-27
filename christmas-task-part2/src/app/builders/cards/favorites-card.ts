@@ -9,7 +9,7 @@ const getImageElements = (id: number, count: number): Node[] => {
     imgElement.src = `./toys/${id}.png`;
     imgElement.alt = 'toy';
     imgElement.draggable = true;
-    imgElement.id = `${id}-${i}`;  
+    imgElement.id = `${id}-${i}`;
 
     imageElements.push(imgElement);
   }
@@ -20,7 +20,7 @@ const getImageElements = (id: number, count: number): Node[] => {
 const buildFavoritesCard = (state: IState, idx: number): Node => {
   const { toys } = state;
   const [toy] = toys.filter((item) => item.id === idx);
-  const { count } = toy;  
+  const { count } = toy;
 
   const cardElement = <HTMLDivElement>document.createElement('div');
   cardElement.classList.add('favorites__card', 'fav-card');
@@ -29,7 +29,7 @@ const buildFavoritesCard = (state: IState, idx: number): Node => {
 
   const cardCountElement = <HTMLDivElement>document.createElement('div');
   cardCountElement.textContent = `${count}`;
-  cardCountElement.classList.add('fav-card__count');  
+  cardCountElement.classList.add('fav-card__count');
 
   const imageElements = getImageElements(idx, count);
 
@@ -37,56 +37,61 @@ const buildFavoritesCard = (state: IState, idx: number): Node => {
   let countElement: HTMLElement;
 
   imageElements.forEach((image) => {
-    image.addEventListener('mousedown', (e) => {
-      const draggableElement = <HTMLImageElement>e.target;      
+    image.addEventListener('mousedown', (e: Event) => {
+      const draggableElement = <HTMLImageElement>e.target;
       const target = <HTMLElement>document.querySelector('area');
-      const decorationSection = <HTMLElement>document.querySelector('.decoration');  
+      const decorationSection = <HTMLElement>document.querySelector('.decoration');
 
       if (image.parentNode !== decorationSection) {
         parentTarget = image.parentNode as HTMLElement;
-        countElement = parentTarget.querySelector('.fav-card__count') as HTMLElement;       
-      } 
+        countElement = parentTarget.querySelector('.fav-card__count') as HTMLElement;
+      }
 
-      draggableElement.addEventListener('dragstart', (e) => {
+      draggableElement.addEventListener('dragstart', (ev: DragEvent) => {
         const { id } = <HTMLElement>e.target;
-        e.dataTransfer!.setData('text', id);
+        ev.dataTransfer?.setData('text', id);
       });
 
-      [target, parentTarget].forEach((item) => item.addEventListener('dragover', (e) => {
-        e.preventDefault();
-      }));
+      [target, parentTarget].forEach((item) =>
+        item.addEventListener('dragover', (evt: DragEvent) => {
+          evt.preventDefault();
+        })
+      );
 
-      target.addEventListener('drop', (e) => {
-        if (e.type !== 'drop') return;
+      target.addEventListener('drop', (evnt: DragEvent) => {
+        if (evnt.type !== 'drop') return;
 
-        const draggedId = e.dataTransfer!.getData('text');
-        const draggableElement = <HTMLElement>document.getElementById(draggedId);
+        const draggedId = evnt.dataTransfer!.getData('text');
+        const dragElement = <HTMLElement>document.getElementById(draggedId);
 
-        if (draggableElement.parentNode == target) return;
+        if (dragElement.parentNode == target) return;
 
-        draggableElement.style.top = `${e.pageY - draggableElement.offsetHeight * 2}px`;     
-        draggableElement.style.left = `${e.pageX - draggableElement.offsetWidth * 8.8}px`; //TODO remove magic numbers 
-        
-        draggableElement.parentNode!.removeChild(draggableElement);
-        decorationSection.appendChild(draggableElement);
-        
+        const rect = decorationSection.getBoundingClientRect();
+        const [X, Y] = [evnt.pageX - rect.left, evnt.pageY - (rect.top + window.scrollY)];
+
+        dragElement.style.top = `${Y - dragElement.offsetHeight / 2}px`;
+        dragElement.style.left = `${X - dragElement.offsetWidth / 2}px`;
+
+        dragElement.parentNode?.removeChild(dragElement);
+        decorationSection.appendChild(dragElement);
+
         countElement.textContent = `${parentTarget.childElementCount - 1}`;
-      }); 
+      });
 
-      parentTarget.addEventListener('drop', (e) => {
-        if (e.type !== 'drop') return;
+      parentTarget.addEventListener('drop', (event: DragEvent) => {
+        if (event.type !== 'drop') return;
 
-        const draggedId = e.dataTransfer!.getData('text');
-        const draggableElement = <HTMLElement>document.getElementById(draggedId);      
-        const [parentElementId] = draggedId.split('-');    
+        const draggedId = event.dataTransfer!.getData('text');
+        const draggableEl = <HTMLElement>document.getElementById(draggedId);
+        const [parentElementId] = draggedId.split('-');
 
-        if (parentElementId !== parentTarget.dataset.num) return;       
+        if (parentElementId !== parentTarget.dataset.num) return;
 
-        draggableElement.style.top = '';      
-        draggableElement.style.left = ''
-        
-        draggableElement.parentNode!.removeChild(draggableElement);
-        parentTarget.appendChild(draggableElement);
+        draggableEl.style.top = '';
+        draggableEl.style.left = '';
+
+        draggableEl.parentNode?.removeChild(draggableEl);
+        parentTarget.appendChild(draggableEl);
         countElement.textContent = `${parentTarget.childElementCount - 1}`;
       });
     });
