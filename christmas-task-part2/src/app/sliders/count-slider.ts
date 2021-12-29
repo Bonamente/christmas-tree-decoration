@@ -3,7 +3,7 @@ import { IState } from '../types';
 import setLocalStorage from '../utils/set-local-storage';
 import renderCards from '../renders/render-cards';
 
-const createCountSLider = (state: IState): void => {
+const createCountSlider = (state: IState): void => {
   const { countFilter } = state.rangeFilters;
   const { initMin, initMax, min, max } = countFilter;
   const countSlider = <target>document.querySelector('.count__slider');
@@ -42,4 +42,4 @@ const createCountSLider = (state: IState): void => {
   });
 };
 
-export default createCountSLider;
+export default createCountSlider;

@@ -3,7 +3,7 @@ import buildHeader from '../builders/header';
 import buildPageContent from '../builders/page-content';
 import buildFooter from '../builders/footer';
 
-import createCountSLider from '../sliders/count-slider';
+import createCountSlider from '../sliders/count-slider';
 import createYearSlider from '../sliders/year-slider';
 import playMusic from '../utils/media/play-music';
 import makeSnow from '../utils/media/make-snow';
@@ -20,7 +20,7 @@ const renderPage = (state: IState): void => {
   document.body.append(header, pageContent, footer);
 
   if (activePage === 'toys-page') {
-    createCountSLider(state);
+    createCountSlider(state);
     createYearSlider(state);
   }
 
