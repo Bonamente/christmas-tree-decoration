@@ -1,6 +1,6 @@
 const music = new Audio('audio/audio.mp3');
 
-const playMusic = (isActive: boolean) => {
+const playMusic = (isActive: boolean): void => {
   if (isActive) {
     music.play();
     music.loop = true;

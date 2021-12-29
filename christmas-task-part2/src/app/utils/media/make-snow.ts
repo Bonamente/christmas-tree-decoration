@@ -3,7 +3,7 @@ let intervalTimerId: ReturnType<typeof setInterval>;
 
 const createSnowFlake = (): void => {
   const decorationSection = <HTMLElement>document.querySelector('.decoration');
-  const snowFlake = document.createElement('i');
+  const snowFlake = <HTMLElement>document.createElement('i');
   snowFlake.classList.add('fas');
   snowFlake.classList.add('fa-snowflake');
 
