@@ -20,7 +20,7 @@ export interface IMediaForm {
 }
 
 export interface ITreeForm {
-  [key: string]: number | string;
+  [key: string]: string;
 }
 
 export interface IState {

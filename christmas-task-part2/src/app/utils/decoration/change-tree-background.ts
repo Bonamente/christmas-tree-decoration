@@ -1,4 +1,4 @@
-const changeTreeBackground = (value: number | string): void => {
+const changeTreeBackground = (value: string): void => {
   const decorationSection = <HTMLDivElement>document.querySelector('.decoration');
 
   decorationSection.className = '';

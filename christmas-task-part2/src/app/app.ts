@@ -20,8 +20,8 @@ export const app = () => {
     },
 
     treeForm: {
-      tree: 1,
-      bg: 1,
+      tree: '1',
+      bg: '1',
       garland: 'multicolored',
     },
 

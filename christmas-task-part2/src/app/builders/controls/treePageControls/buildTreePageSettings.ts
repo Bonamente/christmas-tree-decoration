@@ -39,8 +39,8 @@ const buildTreePageSettings = (state: IState): Node => {
     state.mediaForm.audio = false;
     state.mediaForm.snow = false;
     state.mediaForm.garland = false;
-    state.treeForm.tree = 1;
-    state.treeForm.bg = 1;
+    state.treeForm.tree = '1';
+    state.treeForm.bg = '1';
     state.treeForm.garland = 'multicolored';
 
     renderPage(state);

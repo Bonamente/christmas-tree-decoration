@@ -12,9 +12,7 @@ const buildTreeForm = (state: IState): Node => {
     const activeElement = e.target as HTMLInputElement;
     const { name } = activeElement;
 
-    const currentValue = name === 'garland' ? activeElement.value : Number(activeElement.value);
-
-    state.treeForm[name] = currentValue;
+    state.treeForm[name] = activeElement.value;
 
     changeDecorations(state);
     setLocalStorage(state);
