@@ -6,8 +6,8 @@ import buildTreePageContent from '../pages/tree-page/tree-page';
 const buildPageContent = (state: IState): Node => {
   const { activePage } = state;
 
-  const mainElement = document.createElement('main');
-  const overlayElement = document.createElement('div');
+  const mainElement = <HTMLElement>document.createElement('main');
+  const overlayElement = <HTMLDivElement>document.createElement('div');
 
   mainElement.classList.add('main');
   overlayElement.classList.add('overlay');

@@ -2,8 +2,8 @@ import { IState } from '../../types';
 import renderPage from '../../renders/render-page';
 
 const buildMainPageContent = (state: IState): HTMLElement => {
-  const pageContainer = document.createElement('div');
-  const startButton = document.createElement('a');
+  const pageContainer = <HTMLDivElement>document.createElement('div');
+  const startButton = <HTMLAnchorElement>document.createElement('a');
 
   pageContainer.classList.add('page-container', 'page-container--main-page');
   pageContainer.innerHTML = `

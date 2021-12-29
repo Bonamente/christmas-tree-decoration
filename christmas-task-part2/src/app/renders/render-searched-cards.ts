@@ -2,8 +2,8 @@ import { IState } from '../types';
 import buildCard from '../builders/cards/card';
 
 const renderSearchedCards = (state: IState): void => {
-  const headerControls = document.querySelector('.header__controls') as HTMLElement;
-  const cardsList = document.querySelector('.cards__list') as HTMLElement;
+  const headerControls = <HTMLElement>document.querySelector('.header__controls');
+  const cardsList = <HTMLUListElement>document.querySelector('.cards__list');
 
   const cardsData = Array.from(state.uiState.searchedToys).flat();
   const cards = cardsData.map((item) => buildCard(state, item));

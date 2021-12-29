@@ -5,7 +5,7 @@ import buildSortSection from '../../builders/controls/sort-section';
 import buildCards from '../../builders/cards/cards';
 
 const buildToysPageControls = (state: IState): Node => {
-  const controlsSection = document.createElement('section');
+  const controlsSection = <HTMLElement>document.createElement('section');
   controlsSection.classList.add('controls');
   controlsSection.append(buildValueFilters(state), buildRangeFilters(state), buildSortSection(state));
 
@@ -13,12 +13,12 @@ const buildToysPageControls = (state: IState): Node => {
 };
 
 const buildToysPageContent = (state: IState): HTMLElement => {
-  const pageContainer = document.createElement('div');
-  const heading1 = document.createElement('h1');
+  const pageContainer = <HTMLDivElement>document.createElement('div');
+  const heading1 = <HTMLHeadingElement>document.createElement('h1');
 
-  const cardsElement = document.createElement('section');
-  const cardsTitle = document.createElement('h2');
-  const cardsList = document.createElement('ul');
+  const cardsElement = <HTMLElement>document.createElement('section');
+  const cardsTitle = <HTMLHeadingElement>document.createElement('h2');
+  const cardsList = <HTMLUListElement>document.createElement('ul');
 
   pageContainer.classList.add('page-container');
   heading1.classList.add('sr-only');

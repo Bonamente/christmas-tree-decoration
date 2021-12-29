@@ -4,7 +4,7 @@ import buildHtmlForMediaForm from './htmlForMediaForm';
 import runMedia from '../../../utils/media/run-media';
 
 const buildMediaForm = (state: IState): Node => {
-  const formElement = document.createElement('form');
+  const formElement = <HTMLFormElement>document.createElement('form');
   formElement.innerHTML = buildHtmlForMediaForm(state);
   formElement.classList.add('media-settings__form', 'form');
 

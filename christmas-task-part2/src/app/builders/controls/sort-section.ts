@@ -6,12 +6,12 @@ import renderCards from '../../renders/render-cards';
 import renderPage from '../../renders/render-page';
 
 const buildSortSection = (state: IState): Node => {
-  const sortSection = document.createElement('section');
-  const sortTitle = document.createElement('h2');
-  const sortSelect = document.createElement('select');
-  const resetButtonsContainer = document.createElement('div');
-  const resetFiltersBtn = document.createElement('button');
-  const resetSettingsBtn = document.createElement('button');
+  const sortSection = <HTMLElement>document.createElement('section');
+  const sortTitle = <HTMLHeadingElement>document.createElement('h2');
+  const sortSelect = <HTMLSelectElement>document.createElement('select');
+  const resetButtonsContainer = <HTMLDivElement>document.createElement('div');
+  const resetFiltersBtn = <HTMLButtonElement>document.createElement('button');
+  const resetSettingsBtn = <HTMLButtonElement>document.createElement('button');
 
   sortSection.classList.add('sort');
 

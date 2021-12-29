@@ -6,14 +6,14 @@ import makeSnow from '../../../utils/media/make-snow';
 import playMusic from '../../../utils/media/play-music';
 
 const buildTreePageSettings = (state: IState): Node => {
-  const settingsSection = document.createElement('section');
-  const settingsSectionTitle = document.createElement('h2');
-  const mediaSettings = document.createElement('section');
-  const mediaSettingsTitle = document.createElement('h3');
-  const treeSettings = document.createElement('section');
-  const treeSettingsTitle = document.createElement('h3');
-  const settingsButtonContainer = document.createElement('div');
-  const resetSettingsBtn = document.createElement('button');
+  const settingsSection = <HTMLElement>document.createElement('section');
+  const settingsSectionTitle = <HTMLHeadingElement>document.createElement('h2');
+  const mediaSettings = <HTMLElement>document.createElement('section');
+  const mediaSettingsTitle = <HTMLHeadingElement>document.createElement('h3');
+  const treeSettings = <HTMLElement>document.createElement('section');
+  const treeSettingsTitle = <HTMLHeadingElement>document.createElement('h3');
+  const settingsButtonContainer = <HTMLDivElement>document.createElement('div');
+  const resetSettingsBtn = <HTMLButtonElement>document.createElement('button');
 
   settingsSection.classList.add('settings');
   settingsSectionTitle.textContent = 'Настройки';

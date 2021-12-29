@@ -4,8 +4,8 @@ import buildDecorationSection from '../../builders/decoration-section';
 import buildFavoritesSection from '../../builders/favorites-section';
 
 const buildTreePageContent = (state: IState): HTMLElement => {
-  const pageContainer = document.createElement('div');
-  const heading1 = document.createElement('h1');
+  const pageContainer = <HTMLDivElement>document.createElement('div');
+  const heading1 = <HTMLHeadingElement>document.createElement('h1');
 
   pageContainer.classList.add('page-container', 'page-container--tree');
   heading1.classList.add('sr-only');

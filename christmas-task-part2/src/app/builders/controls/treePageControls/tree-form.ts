@@ -4,7 +4,7 @@ import buildHtmlForTreePageForm from './htmlForTreeForm';
 import changeDecorations from '../../../utils/decoration/change-decorations';
 
 const buildTreeForm = (state: IState): Node => {
-  const formElement = document.createElement('form');
+  const formElement = <HTMLFormElement>document.createElement('form');
   formElement.innerHTML = buildHtmlForTreePageForm(state);
   formElement.classList.add('tree-settings__form', 'form');
 

@@ -6,7 +6,7 @@ const buildCard = (state: IState, toy: IToy): Node => {
   const { favoritesIds } = state;
   const { id, name, count, year, shape, color, size, favorite } = toy;
 
-  const cardElement = document.createElement('li') as HTMLElement;
+  const cardElement = <HTMLLIElement>document.createElement('li');
   cardElement.classList.add('cards__item', 'card');
   cardElement.setAttribute('tabindex', '0');
   cardElement.dataset.num = `${id}`;
@@ -31,7 +31,7 @@ const buildCard = (state: IState, toy: IToy): Node => {
 
   cardElement.addEventListener('click', (): void => {
     const cardId = Number(cardElement.dataset.num);
-    const toyCounterElement = document.querySelector('.toy-counter') as HTMLElement;
+    const toyCounterElement = <HTMLSpanElement>document.querySelector('.toy-counter');
 
     if (favoritesIds.has(cardId)) {
       favoritesIds.delete(cardId);
