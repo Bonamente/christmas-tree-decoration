@@ -37,37 +37,50 @@ const buildFavoritesCard = (state: IState, idx: number): Node => {
   let countElement: HTMLElement;
 
   imageElements.forEach((image) => {
-    image.addEventListener('mousedown', (e: Event) => {
+    image.addEventListener('mousedown', (e: Event): void => {
       const draggableElement = <HTMLImageElement>e.target;
       const target = <HTMLElement>document.querySelector('area');
       const decorationSection = <HTMLElement>document.querySelector('.decoration');
 
       if (image.parentNode !== decorationSection) {
-        parentTarget = image.parentNode as HTMLElement;
-        countElement = parentTarget.querySelector('.fav-card__count') as HTMLElement;
+        parentTarget = <HTMLDivElement>image.parentNode;
+        countElement = <HTMLDivElement>parentTarget.querySelector('.fav-card__count');
       }
 
-      draggableElement.addEventListener('dragstart', (ev: DragEvent) => {
-        const { id } = <HTMLElement>e.target;
+      draggableElement.addEventListener('dragstart', (ev: DragEvent): void => {
+        const { id } = <HTMLElement>ev.target;
         ev.dataTransfer?.setData('text', id);
       });
 
-      [target, parentTarget].forEach((item) =>
-        item.addEventListener('dragover', (evt: DragEvent) => {
-          evt.preventDefault();
-        })
-      );
+      draggableElement.addEventListener('dragend', (evt): void => {
+        draggableElement.hidden = true;
+        const elemBelow = document.elementFromPoint(evt.clientX, evt.clientY);
+        draggableElement.hidden = false;
 
-      target.addEventListener('drop', (evnt: DragEvent) => {
-        if (evnt.type !== 'drop') return;
+        if (elemBelow !== draggableElement) {
+          draggableElement.style.top = '';
+          draggableElement.style.left = '';
 
-        const draggedId = evnt.dataTransfer!.getData('text');
+          draggableElement.parentNode?.removeChild(draggableElement);
+          parentTarget.appendChild(draggableElement);
+          countElement.textContent = `${parentTarget.childElementCount - 1}`;
+        }
+      });
+
+      target.addEventListener('dragover', (evnt: DragEvent): void => {
+        evnt.preventDefault();
+      });
+
+      target.addEventListener('drop', (event: DragEvent): void => {
+        if (event.type !== 'drop') return;
+
+        const draggedId = event.dataTransfer!.getData('text');
         const dragElement = <HTMLElement>document.getElementById(draggedId);
 
         if (dragElement.parentNode == target) return;
 
         const rect = decorationSection.getBoundingClientRect();
-        const [X, Y] = [evnt.pageX - rect.left, evnt.pageY - (rect.top + window.scrollY)];
+        const [X, Y] = [event.pageX - rect.left, event.pageY - (rect.top + window.scrollY)];
 
         dragElement.style.top = `${Y - dragElement.offsetHeight / 2}px`;
         dragElement.style.left = `${X - dragElement.offsetWidth / 2}px`;
@@ -75,23 +88,6 @@ const buildFavoritesCard = (state: IState, idx: number): Node => {
         dragElement.parentNode?.removeChild(dragElement);
         decorationSection.appendChild(dragElement);
 
-        countElement.textContent = `${parentTarget.childElementCount - 1}`;
-      });
-
-      parentTarget.addEventListener('drop', (event: DragEvent) => {
-        if (event.type !== 'drop') return;
-
-        const draggedId = event.dataTransfer!.getData('text');
-        const draggableEl = <HTMLElement>document.getElementById(draggedId);
-        const [parentElementId] = draggedId.split('-');
-
-        if (parentElementId !== parentTarget.dataset.num) return;
-
-        draggableEl.style.top = '';
-        draggableEl.style.left = '';
-
-        draggableEl.parentNode?.removeChild(draggableEl);
-        parentTarget.appendChild(draggableEl);
         countElement.textContent = `${parentTarget.childElementCount - 1}`;
       });
     });
