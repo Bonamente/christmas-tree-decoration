@@ -20,11 +20,7 @@ const buildValueFilters = (state: IState): Node => {
     const activeElement = e.target as HTMLInputElement;
     const [filterGroup, valueName] = activeElement.name.split('-');
 
-    if (activeElement.checked) {
-      state.valueFilter[filterGroup][valueName] = true;
-    } else {
-      state.valueFilter[filterGroup][valueName] = false;
-    }
+    state.valueFilter[filterGroup][valueName] = activeElement.checked;
 
     renderCards(state);
     setLocalStorage(state);
