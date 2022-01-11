@@ -1,8 +1,18 @@
 import { IState } from '../types';
 
 const setLocalStorage = (currentState: IState): void => {
-  const { valueFilter, rangeFilters, sortingType, favoritesIds } = currentState;
-  const savedSettings = { valueFilter, rangeFilters, sortingType, favoritesIds: Array.from(favoritesIds) };
+  const { activePage, mediaForm, treeForm, valueFilter, rangeFilters, sortingType, favoritesIds } = currentState;
+
+  const savedSettings = {
+    activePage,
+    mediaForm,
+    treeForm,
+    valueFilter,
+    rangeFilters,
+    sortingType,
+    favoritesIds: Array.from(favoritesIds),
+  };
+
   localStorage.setItem('savedSettings', JSON.stringify(savedSettings));
 };
 

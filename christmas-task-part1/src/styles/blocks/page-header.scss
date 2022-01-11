@@ -28,6 +28,7 @@
   cursor: pointer;
   transition: 0.3s;
 
+  &.active-page,
   &:hover,
   &:focus {
     filter: invert(57%) sepia(100%) saturate(329%) hue-rotate(141deg) brightness(89%) contrast(90%);

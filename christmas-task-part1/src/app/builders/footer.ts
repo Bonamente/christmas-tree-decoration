@@ -1,5 +1,5 @@
 const buildFooter = (): Node => {
-  const footerElement = document.createElement('footer');
+  const footerElement = <HTMLElement>document.createElement('footer');
   footerElement.classList.add('footer');
 
   footerElement.innerHTML = `

@@ -7,8 +7,8 @@ const createYearSlider = (state: IState): void => {
   const { yearFilter } = state.rangeFilters;
   const { initMin, initMax, min, max } = yearFilter;
   const yearSlider = <target>document.querySelector('.year__slider');
-  const outputMin = <HTMLElement>document.querySelector('.year__output--min');
-  const outputMax = <HTMLElement>document.querySelector('.year__output--max');
+  const outputMin = <HTMLOutputElement>document.querySelector('.year__output--min');
+  const outputMax = <HTMLOutputElement>document.querySelector('.year__output--max');
   const outputs = [outputMin, outputMax];
 
   noUiSlider.create(yearSlider, {
@@ -35,7 +35,7 @@ const createYearSlider = (state: IState): void => {
     renderCards(state);
   });
 
-  const resetFiltersBtn = document.querySelector('.reset__filters-btn') as HTMLElement;
+  const resetFiltersBtn = <HTMLButtonElement>document.querySelector('.reset__filters-btn');
 
   resetFiltersBtn.addEventListener('click', (): void => {
     yearSlider?.noUiSlider?.set([initMin, initMax]);

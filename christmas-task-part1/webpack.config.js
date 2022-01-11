@@ -67,6 +67,14 @@ module.exports = ({ development }) => ({
           from: path.resolve('src/assets/img/toys'),
           to: path.resolve('dist/toys'),
         },
+        {
+          from: path.resolve('src/assets/img/trees'),
+          to: path.resolve('dist/trees'),
+        },
+        {
+          from: path.resolve('src/assets/audio'),
+          to: path.resolve('dist/audio'),
+        },
       ],
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),

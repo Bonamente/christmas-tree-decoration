@@ -3,12 +3,12 @@ import { IState } from '../types';
 import setLocalStorage from '../utils/set-local-storage';
 import renderCards from '../renders/render-cards';
 
-const createCountSLider = (state: IState): void => {
+const createCountSlider = (state: IState): void => {
   const { countFilter } = state.rangeFilters;
   const { initMin, initMax, min, max } = countFilter;
   const countSlider = <target>document.querySelector('.count__slider');
-  const outputMin = <HTMLElement>document.querySelector('.count__output--min');
-  const outputMax = <HTMLElement>document.querySelector('.count__output--max');
+  const outputMin = <HTMLOutputElement>document.querySelector('.count__output--min');
+  const outputMax = <HTMLOutputElement>document.querySelector('.count__output--max');
   const outputs = [outputMin, outputMax];
 
   noUiSlider.create(countSlider, {
@@ -35,11 +35,11 @@ const createCountSLider = (state: IState): void => {
     renderCards(state);
   });
 
-  const resetFiltersBtn = document.querySelector('.reset__filters-btn') as HTMLElement;
+  const resetFiltersBtn = <HTMLButtonElement>document.querySelector('.reset__filters-btn');
 
   resetFiltersBtn.addEventListener('click', (): void => {
     countSlider?.noUiSlider?.set([initMin, initMax]);
   });
 };
 
-export default createCountSLider;
+export default createCountSlider;

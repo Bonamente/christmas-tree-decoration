@@ -1,21 +1,17 @@
 import { IState } from '../../types';
-
-import createCountSLider from '../../sliders/count-slider';
-import createYearSlider from '../../sliders/year-slider';
-
 import resetFilters from '../../utils/reset-filters';
 import setLocalStorage from '../../utils/set-local-storage';
 import renderValueFilters from '../../renders/render-value-filters';
 import renderCards from '../../renders/render-cards';
-import renderPage from '../../renders/page-render';
+import renderPage from '../../renders/render-page';
 
 const buildSortSection = (state: IState): Node => {
-  const sortSection = document.createElement('section');
-  const sortTitle = document.createElement('h2');
-  const sortSelect = document.createElement('select');
-  const resetButtonsContainer = document.createElement('div');
-  const resetFiltersBtn = document.createElement('button');
-  const resetSettingsBtn = document.createElement('button');
+  const sortSection = <HTMLElement>document.createElement('section');
+  const sortTitle = <HTMLHeadingElement>document.createElement('h2');
+  const sortSelect = <HTMLSelectElement>document.createElement('select');
+  const resetButtonsContainer = <HTMLDivElement>document.createElement('div');
+  const resetFiltersBtn = <HTMLButtonElement>document.createElement('button');
+  const resetSettingsBtn = <HTMLButtonElement>document.createElement('button');
 
   sortSection.classList.add('sort');
 
@@ -77,8 +73,6 @@ const buildSortSection = (state: IState): Node => {
     state.sortingType = 'name-ascending';
 
     renderPage(state);
-    createCountSLider(state);
-    createYearSlider(state);
   });
 
   resetButtonsContainer.append(resetFiltersBtn, resetSettingsBtn);

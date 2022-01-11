@@ -1,20 +1,28 @@
 import toysData from './toysData.json';
-
 import { IState } from './types';
-
-import renderPage from './renders/page-render';
-import createCountSLider from './sliders/count-slider';
-import createYearSlider from './sliders/year-slider';
+import renderPage from './renders/render-page';
 
 export const favoritesMaxCount = 20;
 
 export const app = () => {
   const state: IState = {
-    activePage: 'toys-page', //'main-page', 'tree-page'
+    activePage: 'main-page',
 
     searchInput: '',
     uiState: {
       searchedToys: new Set(),
+    },
+
+    mediaForm: {
+      audio: false,
+      snow: false,
+      garland: false,
+    },
+
+    treeForm: {
+      tree: '1',
+      bg: '1',
+      garland: 'multicolored',
     },
 
     valueFilter: {
@@ -67,10 +75,13 @@ export const app = () => {
   const getCurrentState = (): IState => {
     if (localStorage.getItem('savedSettings')) {
       const savedSettings: IState = JSON.parse(localStorage.getItem('savedSettings') || '{}');
-      const { valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;
+      const { activePage, mediaForm, treeForm, valueFilter, rangeFilters, sortingType, favoritesIds } = savedSettings;
 
       const currentState = {
         ...state,
+        activePage,
+        mediaForm,
+        treeForm,
         valueFilter,
         rangeFilters,
         sortingType,
@@ -84,8 +95,5 @@ export const app = () => {
   };
 
   const currentState = getCurrentState();
-
   renderPage(currentState);
-  createCountSLider(currentState);
-  createYearSlider(currentState);
 };

@@ -15,6 +15,14 @@ export interface IValueFilters {
   [key: string]: Record<string, boolean>;
 }
 
+export interface IMediaForm {
+  [key: string]: boolean;
+}
+
+export interface ITreeForm {
+  [key: string]: string;
+}
+
 export interface IState {
   activePage: string;
 
@@ -22,6 +30,9 @@ export interface IState {
   uiState: {
     searchedToys: Set<IToy[]>;
   };
+
+  mediaForm: IMediaForm;
+  treeForm: ITreeForm;
 
   valueFilter: IValueFilters;
 
