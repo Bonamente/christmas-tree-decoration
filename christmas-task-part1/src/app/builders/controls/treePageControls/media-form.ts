@@ -14,11 +14,7 @@ const buildMediaForm = (state: IState): Node => {
     const activeElement = e.target as HTMLInputElement;
     const { name } = activeElement;
 
-    if (activeElement.checked) {
-      state.mediaForm[name] = true;
-    } else {
-      state.mediaForm[name] = false;
-    }
+    state.mediaForm[name] = activeElement.checked;
 
     runMedia(state, [audio, snow, garland]);
     setLocalStorage(state);
