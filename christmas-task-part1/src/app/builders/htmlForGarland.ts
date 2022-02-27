@@ -1,118 +1,18 @@
-const buildHtmlForGarland = (garlandColor: string): string =>
-  `<ul class="lightrope lightrope--1">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
+const buildRow = (color: string, rowNum: number, bulbsPerRow: number): string => {
+  const bulb = `<li class="${color}"></li>`;
+  return `<ul class="lightrope lightrope--${rowNum}">${bulb.repeat(bulbsPerRow)}</ul>`;
+};
 
-    <ul class="lightrope lightrope--2">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
+const buildHtmlForGarland = (garlandColor: string): string => {
+  const bulbsPerRow = [5, 7, 8, 11, 18, 21, 24];
+  const rowCount = 7;
+  let html = '';
 
-    <ul class="lightrope lightrope--3">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
+  for (let i = 1; i <= rowCount; i += 1) {
+    html += buildRow(garlandColor, i, bulbsPerRow[i - 1]);
+  }
 
-    <ul class="lightrope lightrope--4">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
-
-    <ul class="lightrope lightrope--5">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
-
-    <ul class="lightrope lightrope--6">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
-
-    <ul class="lightrope lightrope--7">
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-      <li class="${garlandColor}"></li>
-    </ul>
-`;
+  return html;
+};
 
 export default buildHtmlForGarland;
