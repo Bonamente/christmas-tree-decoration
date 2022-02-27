@@ -1,18 +1,18 @@
 import { IState } from '../../types';
 
 const getImageElements = (id: number, count: number): Node[] => {
-  const imageElements = [];
+  const imageElements = Array(count)
+    .fill(0)
+    .map((_el, i) => {
+      const imgElement = new Image();
+      imgElement.classList.add('fav-card__img');
+      imgElement.src = `./toys/${id}.png`;
+      imgElement.alt = 'toy';
+      imgElement.draggable = true;
+      imgElement.id = `${id}-${i}`;
 
-  for (let i = count; i > 0; i -= 1) {
-    const imgElement = <HTMLImageElement>document.createElement('img');
-    imgElement.classList.add('fav-card__img');
-    imgElement.src = `./toys/${id}.png`;
-    imgElement.alt = 'toy';
-    imgElement.draggable = true;
-    imgElement.id = `${id}-${i}`;
-
-    imageElements.push(imgElement);
-  }
+      return imgElement;
+    });
 
   return imageElements;
 };
