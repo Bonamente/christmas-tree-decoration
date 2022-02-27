@@ -1,6 +1,6 @@
 {
   "name": "christmas-tree-decoration",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Decorate your own virtual christmas tree with a variety of beautiful toys and animated lights",
   "private": true,
   "scripts": {
